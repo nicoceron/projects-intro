@@ -13,10 +13,10 @@
 /*    |  |   | |  |                                                           */
 /*    |+----+| |  |       Bogota, D.C., April 15, 2021.                       */
 /*    |++  ++  |  |                                                           */
-/*    ++|  ++  +  |       Copyright (C) System Engineering Program            */
-/*     +++  +-+  ++                     School of Engineering                 */
-/*      +++     ++                      Pontificia Universidad Javeriana      */
-/*        +-----+                       Bogota - Colombia - South America     */
+/*    ++|  ++  +  |       Copyright (C++) System Engineering Program          */
+/*     +++  +-+  ++                       School of Engineering               */
+/*      +++     ++                        Pontificia Universidad Javeriana    */
+/*        +-----+                         Bogota - Colombia - South America   */
 /*                                                                            */
 /******************************************************************************/
 /******************************************************************************/
