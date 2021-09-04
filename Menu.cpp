@@ -89,8 +89,8 @@ void Tabla()
         cout << "Abono Cap." << '\n';
         cout << ab << '\n';
         //Saldo Fin
-        cout << "Saldo Fin" << '\n';
         si -= ab;
+        cout << "Saldo Fin" << '\n';
         cout << si << '\n';
     }
     system("pause");
