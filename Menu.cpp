@@ -62,9 +62,10 @@ void Tabla()
     cin >> y;
     cout << "\n\tDigite Numero de Cuotas : ";
     cin >> z;
+    y /= 100;
     for (int i = 1; i <= z; i++)
     {
-        vc = (x * y) / (1 - (pow(1 + y, (-z))));
+        vc = (x * y) / (1 - pow(1 + y, -z));
         cout << '\n'
              << setprecision(8) << vc;
     }
