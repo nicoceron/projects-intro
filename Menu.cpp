@@ -9,7 +9,7 @@
 /*    |  |   | |  |                     Ing. Mariana Pinzon	                  */
 /*    |  |   | |  |                     correo                                */
 /*    |  |   | |  |                     Ing. Nicolas Ceron                    */
-/*    |  |   | |  |                     ceron_@javeriana.edu.co               */
+/*    |  |   | |  |                     ceron_s@javeriana.edu.co              */
 /*    |  |   | |  |                                                           */
 /*    |+----+| |  |       Bogota, D.C., April 15, 2021.                       */
 /*    |++  ++  |  |                                                           */
