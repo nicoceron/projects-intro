@@ -31,6 +31,7 @@
 #include <iostream>
 #include <conio.h>
 #include <math.h>
+#include <iomanip>
 using namespace std;
 /*FN****************************************************************************
 *
@@ -51,8 +52,9 @@ using namespace std;
 *******************************************************************************/
 void Tabla()
 {
-    int x, y, z;
-    double vc;
+    int x, z;
+    float y;
+    float vc;
     system("cls");
     cout << "\n\tDigite Valor de la Deuda: ";
     cin >> x;
@@ -60,10 +62,11 @@ void Tabla()
     cin >> y;
     cout << "\n\tDigite Numero de Cuotas : ";
     cin >> z;
-    //valor cuota
     for (int i = 1; i <= z; i++)
     {
-        vc = (x * y) / (1 - (pow(1 + x, -z)));
+        vc = (x * y) / (1 - (pow(1 + y, (-z))));
+        cout << '\n'
+             << setprecision(8) << vc;
     }
     system("pause");
 } /*Tabla*/
