@@ -74,23 +74,31 @@ void Tabla()
 void Vectores()
 {
     system("cls");
+    cout << "\n\t\tOPCION EN CONSTRUCCION" << endl
+         << endl;
     system("pause");
 }
 
 void Matrices()
 {
     system("cls");
-    getch();
+    cout << "\n\t\tOPCION EN CONSTRUCCION" << endl
+         << endl;
+    system("pause");
 }
 void Estructuras()
 {
     system("cls");
-    getch();
+    cout << "\n\t\tOPCION EN CONSTRUCCION" << endl
+         << endl;
+    system("pause");
 }
 void Archivos()
 {
     system("cls");
-    getch();
+    cout << "\n\t\tOPCION EN CONSTRUCCION" << endl
+         << endl;
+    system("pause");
 }
 main()
 {
