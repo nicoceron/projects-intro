@@ -53,21 +53,45 @@ using namespace std;
 void Tabla()
 {
     int x, z;
-    float y;
-    float vc;
+    double y;
+    double vc = 0;
+    double in;
+    double ab;
     system("cls");
+    cout << setiosflags(ios::fixed);
+    cout << setprecision(1);
     cout << "\n\tDigite Valor de la Deuda: ";
     cin >> x;
     cout << "\n\tDigite tasa interes en %: ";
     cin >> y;
     cout << "\n\tDigite Numero de Cuotas : ";
     cin >> z;
+    double si = x;
     y /= 100;
     for (int i = 1; i <= z; i++)
     {
+        //P
+        cout << "P" << '\n';
+        cout << i << '\n';
+        //Saldo Inic
+        cout << "Saldo Inic" << '\n';
+        cout << si << '\n';
+        //Intereses
+        in = si * y;
+        cout << "Intereses" << '\n';
+        cout << in << '\n';
+        //Vlr.Cuota
         vc = (x * y) / (1 - pow(1 + y, -z));
-        cout << '\n'
-             << setprecision(8) << vc;
+        cout << "Vlr.Cuota" << '\n';
+        cout << vc << '\n';
+        //Abono Cap.
+        ab = vc - in;
+        cout << "Abono Cap." << '\n';
+        cout << ab << '\n';
+        //Saldo Fin
+        cout << "Saldo Fin" << '\n';
+        si -= ab;
+        cout << si << '\n';
     }
     system("pause");
 } /*Tabla*/
