@@ -41,8 +41,6 @@ using namespace std;
 *
 *   Return:  Nothing
 *
-*   Register of Revisions (Debugging Process):
-*
 *   DATE       RESPONSIBLE    COMMENT
 *   -----------------------------------------------------------------------
 *  Sep 09/21   S.N.Ceron  Initial Implementation
