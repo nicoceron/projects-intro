@@ -64,8 +64,8 @@ void Tabla()
     cin >> z;
     si = x;
     y /= 100;
-	cout << " P\t" << "saldo Inic\t"<<"Intereses\t"<<"Vlr.Cuota\t"<<"Abono Cap.\t"<<"Saldo Fin";
-	cout <<"---\t"<<"----------"<<"----------"<<"----------"<<"----------"<<"----------";
+	cout << " P\t" << "saldo Inic\t"<<"Intereses\t"<<"Vlr.Cuota\t"<<"Abono Cap.\t"<<"Saldo Fin\n";
+	cout <<"---\t"<<"----------"<<"----------"<<"----------"<<"----------"<<"----------\n";
     for (i = 1; i <= z; i++)
     {
 		in = si * y;
