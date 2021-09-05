@@ -52,11 +52,9 @@ using namespace std;
 *******************************************************************************/
 void Tabla()
 {
-    int x, z;
-    double y;
+    int x, z , i ;
+    double y,in,ab,si;
     double vc = 0;
-    double in;
-    double ab;
     system("cls");
     cout << setiosflags(ios::fixed);
     cout << setprecision(1);
@@ -66,35 +64,21 @@ void Tabla()
     cin >> y;
     cout << "\n\tDigite Numero de Cuotas : ";
     cin >> z;
-    double si = x;
+    si = x;
     y /= 100;
-    for (int i = 1; i <= z; i++)
+	cout << " P\t" << "saldo Inic\t"<<"Intereses\t"<<"Vlr.Cuota\t"<<"Abono Cap.\t"<<"Saldo Fin";
+	cout <<"---\t"<<"----------"<<"----------"<<"----------"<<"----------"<<"----------";
+    for (i = 1; i <= z; i++)
     {
-        //P
-        cout << "P" << '\n';
-        cout << i << '\n';
-        //Saldo Inic
-        cout << "Saldo Inic" << '\n';
-        cout << si << '\n';
-        //Intereses
-        in = si * y;
-        cout << "Intereses" << '\n';
-        cout << in << '\n';
-        //Vlr.Cuota
-        vc = (x * y) / (1 - pow(1 + y, -z));
-        cout << "Vlr.Cuota" << '\n';
-        cout << vc << '\n';
-        //Abono Cap.
-        ab = vc - in;
-        cout << "Abono Cap." << '\n';
-        cout << ab << '\n';
-        //Saldo Fin
-        si -= ab;
-        cout << "Saldo Fin" << '\n';
-        cout << si << '\n';
+		in = si * y;
+		vc = (x * y) / (1 - pow(1 + y, -z));
+		ab = vc - in;
+		si -= ab;
+        cout << i <<"\t"<< si<<"\t"<< in << "\t"<< vc << "\t"<< ab << "\t"<< si << "\t";
     }
     system("pause");
 } /*Tabla*/
+
 void Vectores()
 {
     system("cls");
@@ -110,6 +94,7 @@ void Matrices()
          << endl;
     system("pause");
 }
+
 void Estructuras()
 {
     system("cls");
@@ -117,6 +102,7 @@ void Estructuras()
          << endl;
     system("pause");
 }
+
 void Archivos()
 {
     system("cls");
@@ -124,6 +110,7 @@ void Archivos()
          << endl;
     system("pause");
 }
+
 main()
 {
     int op;
