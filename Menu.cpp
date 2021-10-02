@@ -65,7 +65,7 @@ void Tabla()
     si = x;
     y /= 100;
 	cout << " P\t" << "saldo Inic\t"<<"Intereses\t"<<"Vlr.Cuota\t"<<"Abono Cap.\t"<<"Saldo Fin\n";
-	cout <<"---\t"<<"----------"<<"----------"<<"----------"<<"----------"<<"----------\n";
+	cout <<"---\t"<<"----------\t"<<"----------\t"<<"----------\t"<<"----------\t"<<"----------\n";
     for (i = 1; i <= z; i++)
     {
 		in = si * y;
@@ -80,32 +80,28 @@ void Tabla()
 void Vectores()
 {
     system("cls");
-    cout << "\n\t\tOPCION EN CONSTRUCCION" << endl
-         << endl;
+    cout << "\n\t\tOPCION EN CONSTRUCCION" << endl;
     system("pause");
 }
 
 void Matrices()
 {
     system("cls");
-    cout << "\n\t\tOPCION EN CONSTRUCCION" << endl
-         << endl;
+    cout << "\n\t\tOPCION EN CONSTRUCCION" << endl;
     system("pause");
 }
 
 void Estructuras()
 {
     system("cls");
-    cout << "\n\t\tOPCION EN CONSTRUCCION" << endl
-         << endl;
+    cout << "\n\t\tOPCION EN CONSTRUCCION" << endl;
     system("pause");
 }
 
 void Archivos()
 {
     system("cls");
-    cout << "\n\t\tOPCION EN CONSTRUCCION" << endl
-         << endl;
+    cout << "\n\t\tOPCION EN CONSTRUCCION" << endl;
     system("pause");
 }
 
