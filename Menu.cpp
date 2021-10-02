@@ -21,9 +21,9 @@
 /******************************************************************************/
 /******************************************************************************/
 /*                                                                            */
-/*      Origin:  Written and tested by Jeisson Ruiz 				          */
-/*      							   Andres  Orjuela 				          */
-/*       							   Mariana Pinzon 				          */
+/*      Origin:  Written and tested by Jeisson Ruiz 			      */
+/*      			       Andres  Orjuela 			      */
+/*       			       Mariana Pinzon 			      */
 /*                                     Nicolas Ceron                          */
 /*                                                                            */
 /******************************************************************************/
@@ -143,14 +143,12 @@ main()
             break;
         case 9:
             system("cls");
-            cout << "\n\t\tHASTA LA VISTA... Baby :-)" << endl
-                 << endl;
+            cout << "\n\t\tHASTA LA VISTA... Baby :-)" << endl;
             getch();
             break;
         default:
             system("cls");
-            cout << "\n\t\tOPCION INVALIDA ... Intente de nuevo" << endl
-                 << endl;
+            cout << "\n\t\tOPCION INVALIDA ... Intente de nuevo" << endl;
             system("pause");
             break;
         }
