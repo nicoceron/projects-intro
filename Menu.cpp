@@ -1,13 +1,13 @@
 /******************************************************************************/
 /*                                                                            */
-/*   +----+ +----+                    Proyecto 2021-30 				          */
+/*   +----+ +----+                    Proyecto 2021-30 			      */
 /*   ++  ++ +++----+                                                          */
-/*    |  |   |++  ++      DEVELOPED BY: Ing. Jeisson Ruiz 				      */
+/*    |  |   |++  ++      DEVELOPED BY: Ing. Jeisson Ruiz 		      */
 /*    |  |   | |  |                     jeisson_ruizc@javeriana.edu.co        */
-/*    |  |   | |  |                     Ing. Andres Orjuela       		      */
-/*    |  |   | |  |                     correo       						  */
-/*    |  |   | |  |                     Ing. Mariana Pinzon	                  */
-/*    |  |   | |  |                     correo                                */
+/*    |  |   | |  |                     Ing. Andres Orjuela       	      */
+/*    |  |   | |  |                     orjuela_af@javeriana.edu.co           */
+/*    |  |   | |  |                     Ing. Mariana Pinzon	              */
+/*    |  |   | |  |                     mariana-pinzon@javeriana.edu.co       */
 /*    |  |   | |  |                     Ing. Nicolas Ceron                    */
 /*    |  |   | |  |                     ceron_s@javeriana.edu.co              */
 /*    |  |   | |  |                                                           */
@@ -79,10 +79,105 @@ void Tabla()
 
 void Vectores()
 {
+    int  op,l,o,e,i,ne,b,eb ;
+    
+    int vec1[100]={3,7,68,34,12,21,9,23,14,83};
+    int n1=10;
+    int vec2[100]={14,19,23,77,88,14,69,23,18,18,23,12,-6,5,15};
+    int n2=15;
+    
+
     system("cls");
-    cout << "\n\t\tOPCION EN CONSTRUCCION" << endl;
+    cout << "\n\t\tMENU Vectores" << endl;
+        cout << "\n\t\t1. lista Vector";
+        cout << "\n\t\t2. Ordena Vector";
+        cout << "\n\t\t3. Estadisticas";
+        cout << "\n\t\t4. Inserta elemento";
+        cout << "\n\t\t5. Borra elemento";
+        cout << "\n\t\t9. Salir";
+        cout << "\n\n\n\tDigite la opcion: ";
+        cin >> op;
+        
+        if (op==1){
+            cout<<"cual de los dos vectores disponibles desea listar (1 o 2)? ";
+            cin>>l;
+            if(l==1){
+                cout<<"esta es la lista "<<endl;
+            }if(l==2){
+                cout<<"esta es la lista 2 "<<endl;
+            }else{
+                cout<<"digite una opcion valida"<<endl;
+            }
+            
+        }
+        
+        if (op==2){
+            cout<<"Cual de los dos vectores disponibles desea ordenar (1 o 2)? ";
+            cin>>o;
+            if(o==1){
+                cout<<"esta es la lista 1 ordenada"<<endl;
+            }if(o==2){
+                cout<<"esta es la lista 2 ordenada"<<endl;
+            }else{
+                cout<<"digite una opcion valida"<<endl;
+            }
+        }
+        
+         if (op==3){
+            cout<<"Cual de los dos vectores disponibles desea aplicarle estadisticas (1 o 2)? ";
+            cin>>e;
+            if(e==1){
+                cout<<"este es el promedio, la varianza y la desviacion estandar de la lista 1"<<endl;
+            }if(e==2){
+                cout<<"este es el promedio, la varianza y la desviacion estandar de la lista 1"<<endl;
+            }else{
+                cout<<"digite una opcion valida"<<endl;
+            }
+        }
+        
+        if (op==4){
+            cout<<"En cual de los dos vectores disponibles desea insertar el elemto (1 o 2)? ";
+            cin>>i;
+            cout<<"vector original"<<endl;
+                //lista del vector de la seleccion
+            cout<<"Vector ordenado"<<endl;
+                //lista del vector seleccionado en orden
+            cout<<"Digite el elemento a insertar: ";
+            cin>>ne;
+            if(i==1){
+                cout<<"vector nuevo de la lista 1";
+                //lista del vector con el nuevo elemento ya ordenado 
+            }if(i==2){
+                cout<<"vector nuevo de la lista 2";
+                //lista del vector con el nuevo elemento ya ordenado 
+            }else{
+                cout<<"digite una opcion valida"<<endl;
+            }
+        }
+        
+         if (op==5){
+            cout<<"En cual de los dos vectores disponibles desea eliminar el elemto (1 o 2)? ";
+            cin>>b;
+            cout<<"vector original"<<endl;
+                //lista del vector de la seleccion
+            cout<<"Vector ordenado"<<endl;
+                //lista del vector seleccionado en orden
+            cout<<"Digite el elemento a eliminar de la lista que desea: ";
+            cin>>eb;
+            if(b==1){
+                cout<<"vector nuevo de la lista 1";
+                //lista del vector con el nuevo elemento ya ordenado 
+            }if(b==2){
+                cout<<"vector nuevo de la lista 2";
+                //lista del vector con el nuevo elemento ya ordenado 
+            }else{
+                cout<<"digite una opcion valida"<<endl;
+            }
+        }
+        
     system("pause");
 }
+
 
 void Matrices()
 {
