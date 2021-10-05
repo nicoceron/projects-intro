@@ -134,7 +134,7 @@ void Vectores()
     int n1 = 10;
     int vec2[100] = {14, 19, 23, 98, 99, 14, 69, 23, 18, 18, 23, 12, -6, 5, 15};
     int n2 = 15;
-    int x;
+    int x, y, z;
     int op;
     do
     {
@@ -154,7 +154,7 @@ void Vectores()
             system("cls");
             cout << "Digite vector a ser listado (1/2) :";
             cin >> x;
-            cout << '\n';
+            cout << "\n\n";
             if (x == 1)
             {
                 imprime(vec1, n1);
@@ -173,28 +173,22 @@ void Vectores()
             cin >> x;
             if (x == 1)
             {
-                cout << "\n\n\tVector original"
-                     << "\n\n";
+                cout << "\n\n\tVector original\n\n";
                 imprime(vec1, n1);
-                cout << "\n\n\tVector ordenado"
-                     << "\n\n";
+                cout << "\n\n\tVector ordenado\n\n";
                 ordena(vec1, n1);
                 imprime(vec1, n1);
-                cout << endl
-                     << endl;
             }
             else
             {
-                cout << "\n\n\tVector original"
-                     << "\n\n";
+                cout << "\n\n\tVector original\n\n";
                 imprime(vec2, n2);
-                cout << "\n\n\tVector ordenado"
-                     << "\n\n";
+                cout << "\n\n\tVector ordenado\n\n";
                 ordena(vec2, n2);
                 imprime(vec2, n2);
-                cout << endl
-                     << endl;
             }
+            cout << endl
+                 << endl;
             system("pause");
             break;
         case 3:
