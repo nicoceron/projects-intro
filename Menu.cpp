@@ -195,11 +195,57 @@ void Vectores()
             system("pause");
             break;
         case 4:
+            int i, ne;
             system("cls");
+            cout << "En cual de los dos vectores disponibles desea insertar el elemto (1 o 2)? ";
+            cin >> i;
+            cout << "vector original" << endl;
+            //lista del vector de la seleccion
+            cout << "Vector ordenado" << endl;
+            //lista del vector seleccionado en orden
+            cout << "Digite el elemento a insertar: ";
+            cin >> ne;
+            if (i == 1)
+            {
+                cout << "vector nuevo de la lista 1";
+                //lista del vector con el nuevo elemento ya ordenado
+            }
+            if (i == 2)
+            {
+                cout << "vector nuevo de la lista 2";
+                //lista del vector con el nuevo elemento ya ordenado
+            }
+            else
+            {
+                cout << "digite una opcion valida" << endl;
+            }
             system("pause");
             break;
         case 5:
+            int b, eb;
             system("cls");
+            cout << "En cual de los dos vectores disponibles desea eliminar el elemto (1 o 2)? ";
+            cin >> b;
+            cout << "vector original" << endl;
+            //lista del vector de la seleccion
+            cout << "Vector ordenado" << endl;
+            //lista del vector seleccionado en orden
+            cout << "Digite el elemento a eliminar de la lista que desea: ";
+            cin >> eb;
+            if (b == 1)
+            {
+                cout << "vector nuevo de la lista 1";
+                //lista del vector con el nuevo elemento ya ordenado
+            }
+            if (b == 2)
+            {
+                cout << "vector nuevo de la lista 2";
+                //lista del vector con el nuevo elemento ya ordenado
+            }
+            else
+            {
+                cout << "digite una opcion valida" << endl;
+            }
             system("pause");
             break;
         case 9:
