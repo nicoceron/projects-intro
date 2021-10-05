@@ -48,6 +48,46 @@ using namespace std;
 *              M.Arias
 *			   A.Orjuela
 *******************************************************************************/
+void imprime(int vec[], int n)
+{
+    for (int i = 0; i < n; ++i)
+    {
+        cout << setw(4) << vec[i];
+    }
+}
+void ordena(int vec[], int n)
+{
+    int x;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i + 1; j < n; j++)
+        {
+            if (vec[j] > vec[i])
+            {
+                x = vec[i];
+                vec[i] = vec[j];
+                vec[j] = x;
+            }
+        }
+    }
+}
+void estadisticas(int vec[], int n)
+{
+    double sum = 0, v = 0, p;
+    for (int i = 0; i < n; i++)
+    {
+        sum += vec[i];
+    }
+    p = (double)sum / n;
+    for (int i = 0; i < n; i++)
+    {
+        v += pow(vec[i], 2.0);
+    }
+    v = (double)(v / n) - (pow(p, 2.0));
+    cout << "Promedio = " << setprecision(1) << fixed << p << '\n';
+    cout << "Varianza = " << setprecision(2) << fixed << v << '\n';
+    cout << "Desviacion estandar = " << setprecision(2) << fixed << sqrt(v) << '\n';
+}
 void Tabla()
 {
     int x, z , i ;
@@ -79,102 +119,147 @@ void Tabla()
 
 void Vectores()
 {
-    int  op,l,o,e,i,ne,b,eb ;
-    
-    int vec1[100]={3,7,68,34,12,21,9,23,14,83};
-    int n1=10;
-    int vec2[100]={14,19,23,77,88,14,69,23,18,18,23,12,-6,5,15};
-    int n2=15;
-    
+  system("cls");
+    int vec1[100] = {3, 7, 68, 34, 12, 21, 9, 23, 14, 83};
+    int n1 = 10;
+    int vec2[100] = {14, 19, 23, 98, 99, 14, 69, 23, 18, 18, 23, 12, -6, 5, 15};
+    int n2 = 15;
+    int x;
+    int op;
+    do
+    {
 
-    system("cls");
-    cout << "\n\t\tMENU Vectores" << endl;
-        cout << "\n\t\t1. lista Vector";
-        cout << "\n\t\t2. Ordena Vector";
-        cout << "\n\t\t3. Estadisticas";
+        cout << "\n\t\tMENU VECTORES" << endl;
+        cout << "\n\t\t1. Lista vector.";
+        cout << "\n\t\t2. Ordena vector.";
+        cout << "\n\t\t3. Estadisticas.";
         cout << "\n\t\t4. Inserta elemento";
         cout << "\n\t\t5. Borra elemento";
         cout << "\n\t\t9. Salir";
         cout << "\n\n\n\tDigite la opcion: ";
         cin >> op;
-        
-        if (op==1){
-            cout<<"cual de los dos vectores disponibles desea listar (1 o 2)? ";
-            cin>>l;
-            if(l==1){
-                cout<<"esta es la lista "<<endl;
-            }if(l==2){
-                cout<<"esta es la lista 2 "<<endl;
-            }else{
-                cout<<"digite una opcion valida"<<endl;
+        switch (op)
+        {
+        case 1:
+            system("cls");
+            cout << "Digite vector a ser listado (1/2) :";
+            cin >> x;
+            if (x == 1)
+            {
+                imprime(vec1, n1);
             }
-            
-        }
-        
-        if (op==2){
-            cout<<"Cual de los dos vectores disponibles desea ordenar (1 o 2)? ";
-            cin>>o;
-            if(o==1){
-                cout<<"esta es la lista 1 ordenada"<<endl;
-            }if(o==2){
-                cout<<"esta es la lista 2 ordenada"<<endl;
-            }else{
-                cout<<"digite una opcion valida"<<endl;
+            else if (x == 2)
+            {
+                imprime(vec2, n2);
             }
-        }
-        
-         if (op==3){
-            cout<<"Cual de los dos vectores disponibles desea aplicarle estadisticas (1 o 2)? ";
-            cin>>e;
-            if(e==1){
-                cout<<"este es el promedio, la varianza y la desviacion estandar de la lista 1"<<endl;
-            }if(e==2){
-                cout<<"este es el promedio, la varianza y la desviacion estandar de la lista 1"<<endl;
-            }else{
-                cout<<"digite una opcion valida"<<endl;
+            cout << "\n\n\n";
+            system("pause");
+
+            break;
+        case 2:
+            system("cls");
+            cout << "Digite vector a ser ordenado (1/2): ";
+            cin >> x;
+            if (x == 1)
+            {
+                cout << "Vector original";
+                imprime(vec1, n1);
+                cout << '\n';
+                cout << "Vector ordenado";
+                ordena(vec1, n1);
+                imprime(vec1, n1);
             }
-        }
-        
-        if (op==4){
-            cout<<"En cual de los dos vectores disponibles desea insertar el elemto (1 o 2)? ";
-            cin>>i;
-            cout<<"vector original"<<endl;
-                //lista del vector de la seleccion
-            cout<<"Vector ordenado"<<endl;
-                //lista del vector seleccionado en orden
-            cout<<"Digite el elemento a insertar: ";
-            cin>>ne;
-            if(i==1){
-                cout<<"vector nuevo de la lista 1";
-                //lista del vector con el nuevo elemento ya ordenado 
-            }if(i==2){
-                cout<<"vector nuevo de la lista 2";
-                //lista del vector con el nuevo elemento ya ordenado 
-            }else{
-                cout<<"digite una opcion valida"<<endl;
+            else
+            {
+                cout << "Vector original";
+                imprime(vec2, n2);
+                cout << '\n';
+                cout << "Vector ordenado";
+                ordena(vec2, n2);
+                imprime(vec2, n2);
             }
-        }
-        
-         if (op==5){
-            cout<<"En cual de los dos vectores disponibles desea eliminar el elemto (1 o 2)? ";
-            cin>>b;
-            cout<<"vector original"<<endl;
-                //lista del vector de la seleccion
-            cout<<"Vector ordenado"<<endl;
-                //lista del vector seleccionado en orden
-            cout<<"Digite el elemento a eliminar de la lista que desea: ";
-            cin>>eb;
-            if(b==1){
-                cout<<"vector nuevo de la lista 1";
-                //lista del vector con el nuevo elemento ya ordenado 
-            }if(b==2){
-                cout<<"vector nuevo de la lista 2";
-                //lista del vector con el nuevo elemento ya ordenado 
-            }else{
-                cout<<"digite una opcion valida"<<endl;
+            system("pause");
+            break;
+        case 3:
+            system("cls");
+            cout << "Digite el vector a aplicar estadisticas (1/2): ";
+            cin >> x;
+            if (x == 1)
+            {
+                estadisticas(vec1, n1);
             }
+            else
+            {
+                estadisticas(vec2, n2);
+            }
+            system("pause");
+            break;
+        case 4:
+            system("cls");
+			cout << "En cual de los dos vectores disponibles desea insertar el elemto (1 o 2)? ";
+cin >> i;
+cout << "vector original" << endl;
+//lista del vector de la seleccion
+cout << "Vector ordenado" << endl;
+//lista del vector seleccionado en orden
+cout << "Digite el elemento a insertar: ";
+cin >> ne;
+if (i == 1)
+{
+    cout << "vector nuevo de la lista 1";
+    //lista del vector con el nuevo elemento ya ordenado
+}
+if (i == 2)
+{
+    cout << "vector nuevo de la lista 2";
+    //lista del vector con el nuevo elemento ya ordenado
+}
+else
+{
+    cout << "digite una opcion valida" << endl;
+}
+            system("pause");
+            break;
+        case 5:
+            system("cls");
+			cout << "En cual de los dos vectores disponibles desea eliminar el elemto (1 o 2)? ";
+cin >> b;
+cout << "vector original" << endl;
+//lista del vector de la seleccion
+cout << "Vector ordenado" << endl;
+//lista del vector seleccionado en orden
+cout << "Digite el elemento a eliminar de la lista que desea: ";
+cin >> eb;
+if (b == 1)
+{
+    cout << "vector nuevo de la lista 1";
+    //lista del vector con el nuevo elemento ya ordenado
+}
+if (b == 2)
+{
+    cout << "vector nuevo de la lista 2";
+    //lista del vector con el nuevo elemento ya ordenado
+}
+else
+{
+    cout << "digite una opcion valida" << endl;
+}
+            system("pause");
+            break;
+        case 9:
+            system("cls");
+            cout << "\n\t\tHASTA LA VISTA... Baby :-)" << endl
+                 << endl;
+            getch();
+            break;
+        default:
+            system("cls");
+            cout << "\n\t\tOPCION INVALIDA ... Intente de nuevo" << endl
+                 << endl;
+            system("pause");
+            break;
         }
-        
+    } while (op != 9);
     system("pause");
 }
 
