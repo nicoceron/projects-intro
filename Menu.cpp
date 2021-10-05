@@ -5,9 +5,9 @@
 /*    |  |   |++  ++      DEVELOPED BY: Ing. Jeisson Ruiz 				      */
 /*    |  |   | |  |                     jeisson_ruizc@javeriana.edu.co        */
 /*    |  |   | |  |                     Ing. Andres Orjuela       		      */
-/*    |  |   | |  |                     correo       						  */
+/*    |  |   | |  |                     orjuela_af@javeriana.edu.co			  */
 /*    |  |   | |  |                     Ing. Mariana Pinzon	                  */
-/*    |  |   | |  |                     correo                                */
+/*    |  |   | |  |                     mariana-pinzon@javeriana.edu.co       */
 /*    |  |   | |  |                     Ing. Nicolas Ceron                    */
 /*    |  |   | |  |                     ceron_s@javeriana.edu.co              */
 /*    |  |   | |  |                                                           */
@@ -62,7 +62,7 @@ void ordena(int vec[], int n)
     {
         for (int j = i + 1; j < n; j++)
         {
-            if (vec[j] > vec[i])
+            if (vec[i] > vec[j])
             {
                 x = vec[i];
                 vec[i] = vec[j];
@@ -84,6 +84,7 @@ void estadisticas(int vec[], int n)
         v += pow(vec[i], 2.0);
     }
     v = (double)(v / n) - (pow(p, 2.0));
+    cout << "\n\n";
     cout << "Promedio = " << setprecision(1) << fixed << p << '\n';
     cout << "Varianza = " << setprecision(2) << fixed << v << '\n';
     cout << "Desviacion estandar = " << setprecision(2) << fixed << sqrt(v) << '\n';
@@ -111,10 +112,10 @@ void Tabla()
          << "Abono Cap.\t"
          << "Saldo Fin\n";
     cout << "---\t"
-         << "----------"
-         << "----------"
-         << "----------"
-         << "----------"
+         << "----------\t"
+         << "----------\t"
+         << "----------\t"
+         << "----------\t"
          << "----------\n";
     for (i = 1; i <= z; i++)
     {
@@ -129,7 +130,6 @@ void Tabla()
 
 void Vectores()
 {
-    system("cls");
     int vec1[100] = {3, 7, 68, 34, 12, 21, 9, 23, 14, 83};
     int n1 = 10;
     int vec2[100] = {14, 19, 23, 98, 99, 14, 69, 23, 18, 18, 23, 12, -6, 5, 15};
@@ -138,7 +138,7 @@ void Vectores()
     int op;
     do
     {
-
+        system("cls");
         cout << "\n\t\tMENU VECTORES" << endl;
         cout << "\n\t\t1. Lista vector.";
         cout << "\n\t\t2. Ordena vector.";
@@ -154,17 +154,18 @@ void Vectores()
             system("cls");
             cout << "Digite vector a ser listado (1/2) :";
             cin >> x;
+            cout << '\n';
             if (x == 1)
             {
                 imprime(vec1, n1);
             }
-            else
+            else if (x == 2)
             {
                 imprime(vec2, n2);
             }
-            cout << "\n\n\n";
+            cout << endl
+                 << endl;
             system("pause");
-
             break;
         case 2:
             system("cls");
@@ -172,21 +173,27 @@ void Vectores()
             cin >> x;
             if (x == 1)
             {
-                cout << "Vector original";
+                cout << "\n\n\tVector original"
+                     << "\n\n";
                 imprime(vec1, n1);
-                cout << '\n';
-                cout << "Vector ordenado";
+                cout << "\n\n\tVector ordenado"
+                     << "\n\n";
                 ordena(vec1, n1);
                 imprime(vec1, n1);
+                cout << endl
+                     << endl;
             }
             else
             {
-                cout << "Vector original";
+                cout << "\n\n\tVector original"
+                     << "\n\n";
                 imprime(vec2, n2);
-                cout << '\n';
-                cout << "Vector ordenado";
+                cout << "\n\n\tVector ordenado"
+                     << "\n\n";
                 ordena(vec2, n2);
                 imprime(vec2, n2);
+                cout << endl
+                     << endl;
             }
             system("pause");
             break;
@@ -202,6 +209,8 @@ void Vectores()
             {
                 estadisticas(vec2, n2);
             }
+            cout << endl
+                 << endl;
             system("pause");
             break;
         case 4:
