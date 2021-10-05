@@ -48,6 +48,46 @@ using namespace std;
 *              M.Arias
 *			   A.Orjuela
 *******************************************************************************/
+void imprime(int vec[], int n)
+{
+    for (int i = 0; i < n; ++i)
+    {
+        cout << setw(4) << vec[i];
+    }
+}
+void ordena(int vec[], int n)
+{
+    int x;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i + 1; j < n; j++)
+        {
+            if (vec[j] > vec[i])
+            {
+                x = vec[i];
+                vec[i] = vec[j];
+                vec[j] = x;
+            }
+        }
+    }
+}
+void estadisticas(int vec[], int n)
+{
+    double sum = 0, v = 0, p;
+    for (int i = 0; i < n; i++)
+    {
+        sum += vec[i];
+    }
+    p = (double)sum / n;
+    for (int i = 0; i < n; i++)
+    {
+        v += pow(vec[i], 2.0);
+    }
+    v = (double)(v / n) - (pow(p, 2.0));
+    cout << "Promedio = " << setprecision(1) << fixed << p << '\n';
+    cout << "Varianza = " << setprecision(2) << fixed << v << '\n';
+    cout << "Desviacion estandar = " << setprecision(2) << fixed << sqrt(v) << '\n';
+}
 void Tabla()
 {
     int x, z , i ;
@@ -80,8 +120,102 @@ void Tabla()
 void Vectores()
 {
     system("cls");
-    cout << "\n\t\tOPCION EN CONSTRUCCION" << endl
-         << endl;
+    int vec1[100] = {3, 7, 68, 34, 12, 21, 9, 23, 14, 83};
+    int n1 = 10;
+    int vec2[100] = {14, 19, 23, 98, 99, 14, 69, 23, 18, 18, 23, 12, -6, 5, 15};
+    int n2 = 15;
+    int x;
+    int op;
+    do
+    {
+
+        cout << "\n\t\tMENU VECTORES" << endl;
+        cout << "\n\t\t1. Lista vector.";
+        cout << "\n\t\t2. Ordena vector.";
+        cout << "\n\t\t3. Estadisticas.";
+        cout << "\n\t\t4. Inserta elemento";
+        cout << "\n\t\t5. Borra elemento";
+        cout << "\n\t\t9. Salir";
+        cout << "\n\n\n\tDigite la opcion: ";
+        cin >> op;
+        switch (op)
+        {
+        case 1:
+            system("cls");
+            cout << "Digite vector a ser listado (1/2) :";
+            cin >> x;
+            if (x == 1)
+            {
+                imprime(vec1, n1);
+            }
+            else if (x == 2)
+            {
+                imprime(vec2, n2);
+            }
+            cout << "\n\n\n";
+            system("pause");
+
+            break;
+        case 2:
+            system("cls");
+            cout << "Digite vector a ser ordenado (1/2): ";
+            cin >> x;
+            if (x == 1)
+            {
+                cout << "Vector original";
+                imprime(vec1, n1);
+                cout << '\n';
+                cout << "Vector ordenado";
+                ordena(vec1, n1);
+                imprime(vec1, n1);
+            }
+            else
+            {
+                cout << "Vector original";
+                imprime(vec2, n2);
+                cout << '\n';
+                cout << "Vector ordenado";
+                ordena(vec2, n2);
+                imprime(vec2, n2);
+            }
+            system("pause");
+            break;
+        case 3:
+            system("cls");
+            cout << "Digite el vector a aplicar estadisticas (1/2): ";
+            cin >> x;
+            if (x == 1)
+            {
+                estadisticas(vec1, n1);
+            }
+            else
+            {
+                estadisticas(vec2, n2);
+            }
+            system("pause");
+            break;
+        case 4:
+            system("cls");
+            system("pause");
+            break;
+        case 5:
+            system("cls");
+            system("pause");
+            break;
+        case 9:
+            system("cls");
+            cout << "\n\t\tHASTA LA VISTA... Baby :-)" << endl
+                 << endl;
+            getch();
+            break;
+        default:
+            system("cls");
+            cout << "\n\t\tOPCION INVALIDA ... Intente de nuevo" << endl
+                 << endl;
+            system("pause");
+            break;
+        }
+    } while (op != 9);
     system("pause");
 }
 
