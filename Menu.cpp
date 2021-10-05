@@ -90,8 +90,8 @@ void estadisticas(int vec[], int n)
 }
 void Tabla()
 {
-    int x, z , i ;
-    double y,in,ab,si;
+    int x, z, i;
+    double y, in, ab, si;
     double vc = 0;
     system("cls");
     cout << setiosflags(ios::fixed);
@@ -104,15 +104,25 @@ void Tabla()
     cin >> z;
     si = x;
     y /= 100;
-	cout << " P\t" << "saldo Inic\t"<<"Intereses\t"<<"Vlr.Cuota\t"<<"Abono Cap.\t"<<"Saldo Fin\n";
-	cout <<"---\t"<<"----------"<<"----------"<<"----------"<<"----------"<<"----------\n";
+    cout << " P\t"
+         << "saldo Inic\t"
+         << "Intereses\t"
+         << "Vlr.Cuota\t"
+         << "Abono Cap.\t"
+         << "Saldo Fin\n";
+    cout << "---\t"
+         << "----------"
+         << "----------"
+         << "----------"
+         << "----------"
+         << "----------\n";
     for (i = 1; i <= z; i++)
     {
-		in = si * y;
-		vc = (x * y) / (1 - pow(1 + y, -z));
-		ab = vc - in;
-		si -= ab;
-        cout << i <<"\t"<< si<<"\t"<< in << "\t"<< vc << "\t"<< ab << "\t"<< si << "\t";
+        in = si * y;
+        vc = (x * y) / (1 - pow(1 + y, -z));
+        ab = vc - in;
+        si -= ab;
+        cout << i << "\t" << si << "\t" << in << "\t" << vc << "\t" << ab << "\t" << si << "\t";
     }
     system("pause");
 } /*Tabla*/
@@ -148,7 +158,7 @@ void Vectores()
             {
                 imprime(vec1, n1);
             }
-            else if (x == 2)
+            else
             {
                 imprime(vec2, n2);
             }
