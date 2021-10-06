@@ -89,6 +89,7 @@ void estadisticas(int vec[], int n)
     cout << "Varianza = " << setprecision(2) << fixed << v << '\n';
     cout << "Desviacion estandar = " << setprecision(2) << fixed << sqrt(v) << '\n';
 }
+
 void Tabla()
 {
     int x, z, i;
