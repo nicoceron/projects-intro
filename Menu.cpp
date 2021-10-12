@@ -50,12 +50,11 @@ using namespace std;
 *******************************************************************************/
 void Tabla()
 {
+    system("cls");
     int x, z, i;
     double y, in, ab, si;
     double vc = 0;
-    system("cls");
-    cout << setiosflags(ios::fixed);
-    cout << setprecision(1);
+    cout << fixed << setprecision(1);
     cout << "\n\tDigite Valor de la Deuda: ";
     cin >> x;
     cout << "\n\tDigite tasa interes en %: ";
@@ -65,13 +64,13 @@ void Tabla()
     cout << endl;
     si = x;
     y /= 100;
-    cout << setw(10) << " P\t"
-         << setw(10) << "saldo Inic\t"
-         << setw(10) << "Intereses\t"
-         << setw(10) << "Vlr.Cuota\t"
-         << setw(10) << "Abono Cap.\t"
-         << setw(10) << "Saldo Fin\n";
-    cout << setw(10) << "---\t"
+    cout << setw(10) << "\t P\t"
+         << setw(10) << "Saldo Inic\t"
+         << setw(10) << " Intereses\t"
+         << setw(10) << " Vlr.Cuota\t"
+         << setw(10) << " Abono Cap.\t"
+         << setw(10) << " Saldo Fin\n";
+    cout << setw(10) << "\t---\t"
          << setw(10) << "----------\t"
          << setw(10) << "----------\t"
          << setw(10) << "----------\t"
