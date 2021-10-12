@@ -130,19 +130,15 @@ void ordena(int vec[], int n)
     int x;
     for (int i = 0; i < n; i++)
     {
-        for (int j = i + 1; j < n + 1; j++)
+        for (int j = i + 1; j < n; j++)
         {
-            if (vec[i] >= vec[j])
+            if (vec[i] > vec[j])
             {
                 x = vec[i];
                 vec[i] = vec[j];
                 vec[j] = x;
             }
         }
-    }
-    for (int i = 0; i < n; i++)
-    {
-        vec[i] = vec[i + 1];
     }
 } /*ordena*/
 
@@ -196,13 +192,24 @@ void estadisticas(int vec[], int n)
 *			   A.Orjuela
 *******************************************************************************/
 
-void inserta(int vec[], int n, int ne)
+int insertar(int vec[], int n, int y)
 {
+    int i, j;
+
+    for (i = 0; i < n; i++)
+    {
+        if (y <= vec[i])
+        {
+            break;
+        }
+    }
+    for (j = n - 1; j >= i; j--)
+    {
+        vec[j + 1] = vec[j];
+    }
+    vec[i] = y;
     n++;
-    vec[n] = ne;
-    ordena(vec, n);
-    //para evitar un 0 que se pone al modificar el vector
-    imprime(vec, n);
+    return n;
 }
 
 /*******************************************************************************
@@ -221,22 +228,28 @@ void inserta(int vec[], int n, int ne)
 *			   A.Orjuela
 *******************************************************************************/
 
-void borra(int vec[], int n, int eb)
+int borrar(int vec[], int n, int y)
 {
+    int i, j;
 
-    for (int i = 0; i < n; i++)
+    for (i = 0; i < n; i++)
     {
-        if (eb == vec[i])
+        if (y <= vec[i])
         {
-            for (int j = i; j < n; j++)
-            {
-                vec[j] = vec[j + 1];
-            }
+            break;
         }
     }
-    n--; //debido a que se borra un numero, disminuye la longitud del vector
-    imprime(vec, n);
+    if (y == vec[i])
+    {
+        for (j = i + 1; j < n; ++j)
+        {
+            vec[j - 1] = vec[j];
+        }
+        n--;
+    }
+    return n;
 }
+
 /*******************************************************************************
 *
 *   void vectores();
@@ -333,76 +346,87 @@ void Vectores()
             system("pause");
             break;
         case 4:
-            int i, ne;
             system("cls");
-            cout << "En cual de los dos vectores disponibles desea insertar el elemto (1 o 2)? ";
-            cin >> i;
-            if (i == 1)
+            cout << "Digite el vector a insertar elemento (1/2): ";
+            cin >> x;
+            if (x == 1)
             {
-                cout << "vector original" << endl;
+                cout << "\n\n\tVector original\n\n";
                 imprime(vec1, n1);
-                cout << "\nVector ordenado" << endl;
+                cout << "\n\n\tVector ordenado\n\n";
                 ordena(vec1, n1);
                 imprime(vec1, n1);
-                cout << "\nDigite el elemento a insertar: ";
-                cin >> ne;
-                cout << "\nvector nuevo de la lista 1";
-                inserta(vec1, n1, ne);
-            }
-            if (i == 2)
-            {
-                cout << "vector original" << endl;
-                imprime(vec2, n2);
-                cout << "\nVector ordenado" << endl;
-                ordena(vec2, n2);
-                imprime(vec2, n2);
-                cout << "Digite el elemento a insertar: ";
-                cin >> ne;
-                cout << "vector nuevo de la lista 2";
-                inserta(vec2, n2, ne);
+                cout << "\n\n\tDigite el elemento a insertar: ";
+                cin >> y;
+                n1 = insertar(vec1, n1, y);
+                cout << "\n\n\tVector nuevo\n\n";
+                imprime(vec1, n1);
             }
             else
             {
-                cout << "\ndigite una opcion valida" << endl;
+                cout << "\n\n\tVector original\n\n";
+                imprime(vec2, n2);
+                cout << "\n\n\tVector ordenado\n\n";
+                ordena(vec2, n2);
+                imprime(vec2, n2);
+                cout << "\n\n\tDigite el elemento a borrar: ";
+                cin >> y;
+                n2 = insertar(vec2, n2, y);
+                cout << "\n\n\tVector nuevo\n\n";
+                imprime(vec2, n2);
             }
+            cout << endl
+                 << endl;
             system("pause");
             break;
         case 5:
-            int b, eb;
             system("cls");
-            cout << "En cual de los dos vectores disponibles desea eliminar el elemto (1 o 2)? ";
-            cin >> b;
-
-            if (b == 1)
+            cout << "Digite el vector a borrar elemento (1/2): ";
+            cin >> x;
+            if (x == 1)
             {
-                cout << "vector original" << endl;
+                cout << "\n\n\tVector original\n\n";
                 imprime(vec1, n1);
-                cout << "\nVector ordenado" << endl;
+                cout << "\n\n\tVector ordenado\n\n";
                 ordena(vec1, n1);
                 imprime(vec1, n1);
-
-                cout << "Digite el elemento a eliminar de la lista que desea: ";
-                cin >> eb;
-                cout << "vector nuevo de la lista 1";
-                borra(vec1, n1, eb);
-            }
-            if (b == 2)
-            {
-                cout << "vector original" << endl;
-                imprime(vec2, n2);
-                cout << "\nVector ordenado" << endl;
-                ordena(vec2, n2);
-                imprime(vec2, n2);
-
-                cout << "\n\nDigite el elemento a eliminar de la lista:\t ";
-                cin >> eb;
-                cout << "\nvector nuevo de la lista 2";
-                borra(vec2, n2, eb);
+                cout << "\n\n\tDigite el elemento a borrar: ";
+                cin >> y;
+                z = borrar(vec1, n1, y);
+                if (z != n1)
+                {
+                    cout << "\n\n\tVector nuevo\n\n";
+                    n1 = z;
+                    imprime(vec1, n1);
+                }
+                else
+                {
+                    cout << "\n\n\tNO se encontro el numero a borrar :-(";
+                }
             }
             else
             {
-                cout << "\ndigite una opcion valida" << endl;
+                cout << "\n\n\tVector original\n\n";
+                imprime(vec2, n2);
+                cout << "\n\n\tVector ordenado\n\n";
+                ordena(vec2, n2);
+                imprime(vec2, n2);
+                cout << "\n\n\tDigite el elemento a borrar: ";
+                cin >> y;
+                z = borrar(vec2, n2, y);
+                if (z != n2)
+                {
+                    cout << "\n\n\tVector nuevo\n\n";
+                    n2 = z;
+                    imprime(vec2, n2);
+                }
+                else
+                {
+                    cout << "\n\n\tNO se encontro el numero a borrar :-(";
+                }
             }
+            cout << endl
+                 << endl;
             system("pause");
             break;
         case 9:
