@@ -62,6 +62,7 @@ void Tabla()
     cin >> y;
     cout << "\n\tDigite Numero de Cuotas : ";
     cin >> z;
+    cout << endl;
     si = x;
     y /= 100;
     cout << setw(10) << " P\t"
@@ -84,6 +85,8 @@ void Tabla()
         si -= ab;
         cout << setw(10) << i << "\t" << setw(10) << si << "\t" << setw(10) << in << "\t" << setw(10) << vc << "\t" << setw(10) << ab << "\t" << setw(10) << si << "\n";
     }
+    cout << endl
+         << endl;
     system("pause");
 } /*Tabla*/
 /*******************************************************************************
