@@ -347,7 +347,7 @@ void Vectores()
             break;
         case 4:
             system("cls");
-            cout << "Digite el vector a insertar elemento (1/2): ";
+            cout << "Digite vector seleccionado (1/2): ";
             cin >> x;
             if (x == 1)
             {
@@ -381,7 +381,7 @@ void Vectores()
             break;
         case 5:
             system("cls");
-            cout << "Digite el vector a borrar elemento (1/2): ";
+            cout << "Digite vector seleccionado (1/2): ";
             cin >> x;
             if (x == 1)
             {
