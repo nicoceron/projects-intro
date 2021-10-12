@@ -64,25 +64,25 @@ void Tabla()
     cin >> z;
     si = x;
     y /= 100;
-    cout << setw(10) <<" P\t"
-         << setw(10) <<"saldo Inic\t"
-         << setw(10) <<"Intereses\t"
-         << setw(10) <<"Vlr.Cuota\t"
-         << setw(10) <<"Abono Cap.\t"
-         << setw(10) <<"Saldo Fin\n";
-    cout << setw(10) <<"---\t"
-         << setw(10) <<"----------\t"
-         << setw(10) <<"----------\t"
-         << setw(10) <<"----------\t"
-         << setw(10) <<"----------\t"
-         << setw(10) <<"----------\n";
+    cout << setw(10) << " P\t"
+         << setw(10) << "saldo Inic\t"
+         << setw(10) << "Intereses\t"
+         << setw(10) << "Vlr.Cuota\t"
+         << setw(10) << "Abono Cap.\t"
+         << setw(10) << "Saldo Fin\n";
+    cout << setw(10) << "---\t"
+         << setw(10) << "----------\t"
+         << setw(10) << "----------\t"
+         << setw(10) << "----------\t"
+         << setw(10) << "----------\t"
+         << setw(10) << "----------\n";
     for (i = 1; i <= z; i++)
     {
         in = si * y;
         vc = (x * y) / (1 - pow(1 + y, -z));
         ab = vc - in;
         si -= ab;
-        cout << setw(10) <<i << "\t" << setw(10) << si << "\t" << setw(10) <<in << "\t" <<setw(10)<< vc << "\t" << setw(10)<<ab << "\t" << setw(10)<<si << "\n";
+        cout << setw(10) << i << "\t" << setw(10) << si << "\t" << setw(10) << in << "\t" << setw(10) << vc << "\t" << setw(10) << ab << "\t" << setw(10) << si << "\n";
     }
     system("pause");
 } /*Tabla*/
@@ -101,12 +101,13 @@ void Tabla()
 *              M.Arias
 *			   A.Orjuela
 *******************************************************************************/
-void imprime(int vec[], int n){
+void imprime(int vec[], int n)
+{
     for (int i = 0; i < n; ++i)
     {
         cout << setw(4) << vec[i];
     }
-}/*imprime*/
+} /*imprime*/
 /*******************************************************************************
 *
 *   void ordena( int vec[],int n);
@@ -122,11 +123,12 @@ void imprime(int vec[], int n){
 *              M.Arias
 *			   A.Orjuela
 *******************************************************************************/
-void ordena(int vec[], int n){
+void ordena(int vec[], int n)
+{
     int x;
     for (int i = 0; i < n; i++)
     {
-        for (int j = i + 1; j < n+1; j++)
+        for (int j = i + 1; j < n + 1; j++)
         {
             if (vec[i] >= vec[j])
             {
@@ -136,10 +138,11 @@ void ordena(int vec[], int n){
             }
         }
     }
-    for (int i=0;i<n;i++){
-		vec[i]=vec[i+1];
-	}
-}/*ordena*/
+    for (int i = 0; i < n; i++)
+    {
+        vec[i] = vec[i + 1];
+    }
+} /*ordena*/
 
 /*******************************************************************************
 *
@@ -173,7 +176,7 @@ void estadisticas(int vec[], int n)
     cout << "Promedio = " << setprecision(1) << fixed << p << '\n';
     cout << "Varianza = " << setprecision(2) << fixed << v << '\n';
     cout << "Desviacion estandar = " << setprecision(2) << fixed << sqrt(v) << '\n';
-}/*estadisticas*/
+} /*estadisticas*/
 
 /*******************************************************************************
 *
@@ -191,13 +194,13 @@ void estadisticas(int vec[], int n)
 *			   A.Orjuela
 *******************************************************************************/
 
-void inserta(int vec[],int n,int ne){
-	n++;
-	vec[n]=ne;
-	ordena(vec, n);
-	//para evitar un 0 que se pone al modificar el vector
+void inserta(int vec[], int n, int ne)
+{
+    n++;
+    vec[n] = ne;
+    ordena(vec, n);
+    //para evitar un 0 que se pone al modificar el vector
     imprime(vec, n);
-
 }
 
 /*******************************************************************************
@@ -216,18 +219,21 @@ void inserta(int vec[],int n,int ne){
 *			   A.Orjuela
 *******************************************************************************/
 
+void borra(int vec[], int n, int eb)
+{
 
-void borra(int vec[],int n,int eb){
-	
-	for (int i=0;i<n;i++){
-		if(eb==vec[i]){
-			for (int j=i;j<n;j++){
-				vec[j]=vec[j+1];
-			}
-		}
-	}
-	n--;//debido a que se borra un numero, disminuye la longitud del vector
-	imprime(vec, n);
+    for (int i = 0; i < n; i++)
+    {
+        if (eb == vec[i])
+        {
+            for (int j = i; j < n; j++)
+            {
+                vec[j] = vec[j + 1];
+            }
+        }
+    }
+    n--; //debido a que se borra un numero, disminuye la longitud del vector
+    imprime(vec, n);
 }
 /*******************************************************************************
 *
@@ -331,28 +337,27 @@ void Vectores()
             cin >> i;
             if (i == 1)
             {
-            	cout << "vector original" << endl;
-            	imprime(vec1, n1);
-            	cout << "\nVector ordenado" << endl;
-            	ordena(vec1, n1);
+                cout << "vector original" << endl;
                 imprime(vec1, n1);
-            	cout << "\nDigite el elemento a insertar: ";
-            	cin >> ne;
+                cout << "\nVector ordenado" << endl;
+                ordena(vec1, n1);
+                imprime(vec1, n1);
+                cout << "\nDigite el elemento a insertar: ";
+                cin >> ne;
                 cout << "\nvector nuevo de la lista 1";
-                inserta(vec1,n1,ne);
-                
+                inserta(vec1, n1, ne);
             }
             if (i == 2)
             {
-            	cout << "vector original" << endl;
-            	imprime(vec2, n2);
-            	cout << "\nVector ordenado" << endl;
-            	ordena(vec2, n2);
+                cout << "vector original" << endl;
                 imprime(vec2, n2);
-            	cout << "Digite el elemento a insertar: ";
-            	cin >> ne;
+                cout << "\nVector ordenado" << endl;
+                ordena(vec2, n2);
+                imprime(vec2, n2);
+                cout << "Digite el elemento a insertar: ";
+                cin >> ne;
                 cout << "vector nuevo de la lista 2";
-                inserta(vec2,n2,ne);
+                inserta(vec2, n2, ne);
             }
             else
             {
@@ -365,32 +370,35 @@ void Vectores()
             system("cls");
             cout << "En cual de los dos vectores disponibles desea eliminar el elemto (1 o 2)? ";
             cin >> b;
-            
-            if (b == 1){
-            	cout << "vector original" << endl;
-            	imprime(vec1, n1);
-            	cout << "\nVector ordenado" << endl;
-            	ordena(vec1, n1);
+
+            if (b == 1)
+            {
+                cout << "vector original" << endl;
                 imprime(vec1, n1);
-                
-            	cout << "Digite el elemento a eliminar de la lista que desea: ";
-            	cin >> eb;
+                cout << "\nVector ordenado" << endl;
+                ordena(vec1, n1);
+                imprime(vec1, n1);
+
+                cout << "Digite el elemento a eliminar de la lista que desea: ";
+                cin >> eb;
                 cout << "vector nuevo de la lista 1";
-                borra(vec1,n1,eb);
+                borra(vec1, n1, eb);
             }
-            if (b == 2){
-            	cout << "vector original" << endl;
-            	imprime(vec2, n2);
-            	cout << "\nVector ordenado" << endl;
-            	ordena(vec2, n2);
+            if (b == 2)
+            {
+                cout << "vector original" << endl;
                 imprime(vec2, n2);
-                
-            	cout << "\n\nDigite el elemento a eliminar de la lista:\t ";
-            	cin >> eb;
+                cout << "\nVector ordenado" << endl;
+                ordena(vec2, n2);
+                imprime(vec2, n2);
+
+                cout << "\n\nDigite el elemento a eliminar de la lista:\t ";
+                cin >> eb;
                 cout << "\nvector nuevo de la lista 2";
-                borra(vec2,n2,eb);
+                borra(vec2, n2, eb);
             }
-            else{
+            else
+            {
                 cout << "\ndigite una opcion valida" << endl;
             }
             system("pause");
