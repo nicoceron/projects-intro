@@ -76,13 +76,18 @@ void Tabla()
          << setw(10) << "----------\t"
          << setw(10) << "----------\t"
          << setw(10) << "----------\n";
-    for (i = 1; i <= z; i++)
+    for (int i = 1; i <= z; i++)
     {
+        cout << setw(10) << i;
+        cout << "\t" << setw(10) << si;
         in = si * y;
+        cout << "\t" << setw(10) << in;
         vc = (x * y) / (1 - pow(1 + y, -z));
+        cout << "\t" << setw(10) << vc;
         ab = vc - in;
+        cout << "\t" << setw(10) << ab;
         si -= ab;
-        cout << setw(10) << i << "\t" << setw(10) << si << "\t" << setw(10) << in << "\t" << setw(10) << vc << "\t" << setw(10) << ab << "\t" << setw(10) << si << "\n";
+        cout << "\t" << setw(10) << si << "\n";
     }
     cout << endl
          << endl;
