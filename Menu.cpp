@@ -284,7 +284,7 @@ void Vectores()
         {
         case 1:
             system("cls");
-            cout << "\tDigite vector a ser listado (1/2) :";
+            cout << "\t\nDigite vector a ser listado (1/2) :";
             cin >> x;
             cout << "\n\n";
             if (x == 1)
@@ -301,7 +301,7 @@ void Vectores()
             break;
         case 2:
             system("cls");
-            cout << "\tDigite vector a ser ordenado (1/2): ";
+            cout << "\t\nDigite vector a ser ordenado (1/2): ";
             cin >> x;
             if (x == 1)
             {
@@ -325,7 +325,7 @@ void Vectores()
             break;
         case 3:
             system("cls");
-            cout << "\tDigite el vector a aplicar estadisticas (1/2): ";
+            cout << "\t\nDigite el vector a aplicar estadisticas (1/2): ";
             cin >> x;
             if (x == 1)
             {
@@ -341,7 +341,7 @@ void Vectores()
             break;
         case 4:
             system("cls");
-            cout << "\tDigite vector seleccionado (1/2): ";
+            cout << "\t\nDigite vector seleccionado (1/2): ";
             cin >> x;
             if (x == 1)
             {
@@ -375,7 +375,7 @@ void Vectores()
             break;
         case 5:
             system("cls");
-            cout << "\tDigite vector seleccionado (1/2): ";
+            cout << "\t\nDigite vector seleccionado (1/2): ";
             cin >> x;
             if (x == 1)
             {
