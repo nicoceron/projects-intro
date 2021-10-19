@@ -363,7 +363,7 @@ void Vectores()
                 cout << "\n\n\tVector ordenado\n\n";
                 ordena(vec2, n2);
                 imprime(vec2, n2);
-                cout << "\n\n\tDigite el elemento a borrar: ";
+                cout << "\n\n\tDigite el elemento a insertar: ";
                 cin >> y;
                 n2 = insertar(vec2, n2, y);
                 cout << "\n\n\tVector nuevo\n\n";
