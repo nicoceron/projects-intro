@@ -211,7 +211,7 @@ int insertar(int vec[], int n, int y)
     vec[i] = y;
     n++;
     return n;
-}
+} /*insertar*/
 
 /*******************************************************************************
 *
@@ -249,7 +249,7 @@ int borrar(int vec[], int n, int y)
         n--;
     }
     return n;
-}
+} /*borrar*/
 
 /*******************************************************************************
 *
@@ -445,7 +445,7 @@ void Vectores()
         }
     } while (op != 9);
     system("pause");
-}
+} /*vectores*/
 
 void Matrices()
 {
