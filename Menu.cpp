@@ -142,7 +142,6 @@ void ordena(int vec[], int n)
         }
     }
 } /*ordena*/
-
 /*******************************************************************************
 *
 *   void estadisticas( int vec[],int n);
@@ -176,7 +175,6 @@ void estadisticas(int vec[], int n)
     cout << "Varianza = " << setprecision(2) << fixed << v << '\n';
     cout << "Desviacion estandar = " << setprecision(2) << fixed << sqrt(v) << '\n';
 } /*estadisticas*/
-
 /*******************************************************************************
 *
 *   void inserta(int vec[],int n,int ne);
@@ -192,7 +190,6 @@ void estadisticas(int vec[], int n)
 *              M.Arias
 *			   A.Orjuela
 *******************************************************************************/
-
 int insertar(int vec[], int n, int y)
 {
     int i, j;
@@ -212,7 +209,6 @@ int insertar(int vec[], int n, int y)
     n++;
     return n;
 } /*insertar*/
-
 /*******************************************************************************
 *
 *   void borra(int vec[],int n,int eb);
@@ -228,7 +224,6 @@ int insertar(int vec[], int n, int y)
 *              M.Arias
 *			   A.Orjuela
 *******************************************************************************/
-
 int borrar(int vec[], int n, int y)
 {
     int i, j;
@@ -250,7 +245,6 @@ int borrar(int vec[], int n, int y)
     }
     return n;
 } /*borrar*/
-
 /*******************************************************************************
 *
 *   void vectores();
@@ -266,7 +260,6 @@ int borrar(int vec[], int n, int y)
 *              M.Arias
 *			   A.Orjuela
 *******************************************************************************/
-
 void Vectores()
 {
     int vec1[100] = {3, 7, 68, 34, 12, 21, 9, 23, 14, 83};
