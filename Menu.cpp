@@ -440,29 +440,91 @@ void Vectores()
     system("pause");
 } /*vectores*/
 
+/*******************************************************************************
+*
+*   void Matrices();
+*
+*   Purpose: gives menu of the option 3
+*
+*   Return:  Nothing
+*
+*   DATE       RESPONSIBLE    COMMENT
+*   -----------------------------------------------------------------------
+*  Oct 25/21   S.N.Ceron  Initial Implementation
+*              J.C.Ruiz
+*              M.Arias
+*			   A.Orjuela
+*******************************************************************************/
 void Matrices()
 {
     system("cls");
     cout << "\n\t\tOPCION EN CONSTRUCCION" << endl
          << endl;
     system("pause");
-}
+}/*Matrices*/
 
+/*******************************************************************************
+*
+*   void Estructuras();
+*
+*   Purpose: This part of the code is not going to work
+*
+*   Return:  Nothing
+*
+*   DATE       RESPONSIBLE    COMMENT
+*   -----------------------------------------------------------------------
+*  Oct 25/21   S.N.Ceron  Initial Implementation
+*              J.C.Ruiz
+*              M.Arias
+*			   A.Orjuela
+*******************************************************************************/
 void Estructuras()
 {
     system("cls");
     cout << "\n\t\tOPCION EN CONSTRUCCION" << endl
          << endl;
     system("pause");
-}
+}/*Estructuras*/
 
+/*******************************************************************************
+*
+*   void Archivos();
+*
+*   Purpose: This part of the code is not going to work
+*
+*   Return:  Nothing
+*
+*   DATE       RESPONSIBLE    COMMENT
+*   -----------------------------------------------------------------------
+*  Sep 09/21   S.N.Ceron  Initial Implementation
+*              J.C.Ruiz
+*              M.Arias
+*			   A.Orjuela
+*******************************************************************************/
 void Archivos()
 {
     system("cls");
     cout << "\n\t\tOPCION EN CONSTRUCCION" << endl
          << endl;
     system("pause");
-}
+}/*Archivos*/
+
+/*******************************************************************************
+*
+*   main();
+*
+*   Purpose: Is the general function of the code , is in charge of giving the
+*			 list and calling the functions through the code options
+*
+*   Return:  Nothing
+*
+*   DATE       RESPONSIBLE    COMMENT
+*   -----------------------------------------------------------------------
+*  Sep 09/21   S.N.Ceron  Initial Implementation
+*              J.C.Ruiz
+*              M.Arias
+*			   A.Orjuela
+*******************************************************************************/
 
 main()
 {
@@ -510,4 +572,4 @@ main()
             break;
         }
     } while (op != 9);
-}
+}/*main*/
