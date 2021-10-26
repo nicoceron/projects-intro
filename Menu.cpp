@@ -451,7 +451,6 @@ void printmat(int mat[][10], int m, int n)
         cout << endl;
     }
 } //imprime matriz
-
 double porcmat(int mat[][10], int m, int n, int x)
 {
     int c = 0, tot = 0;
@@ -468,7 +467,6 @@ double porcmat(int mat[][10], int m, int n, int x)
     }
     return (double)c * 100 / tot;
 } //porcentaje matriz
-
 double modmat(int mat[][10], int m, int n, int x)
 {
     int c = 0, tot = 0;
@@ -504,7 +502,6 @@ double modmat(int mat[][10], int m, int n, int x)
     }
     return (double)c * 100 / tot;
 }
-
 void trimat(int mat[][10], int m, int n, char z)
 {
     int x = min(m, n);
@@ -537,7 +534,6 @@ void trimat(int mat[][10], int m, int n, char z)
 }
 void Matrices()
 {
-
     int mat[10][10] = {
         {4, 14, 0, 12, 19, 8, 12},
         {5, 10, 0, 9, 3, 11, 4},
@@ -627,7 +623,6 @@ void Matrices()
     } while (op != 9);
     system("pause");
 } /*Matrices*/
-
 /*******************************************************************************
 *
 *   void Estructuras();
