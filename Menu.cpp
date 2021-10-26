@@ -76,11 +76,11 @@ void Tabla()
          << setw(10) << "----------\t"
          << setw(10) << "----------\t"
          << setw(10) << "----------\n";
-    for (i = 1; i <= z; i++)
+	vc = (x * y) / (1 - pow(1 + y, -z));
+	for (i = 1; i <= z; i++)
     {
         cout << setw(10) << i << "\t" << setw(10) << si;
         in = si * y;
-        vc = (x * y) / (1 - pow(1 + y, -z));
         ab = vc - in;
         si -= ab;
         cout << "\t" << setw(10) << in << "\t" << setw(10) << vc << "\t" << setw(10) << ab << "\t" << setw(10) << si << "\n";
@@ -89,6 +89,7 @@ void Tabla()
          << endl;
     system("pause");
 } /*Tabla*/
+
 /*******************************************************************************
 *
 *   void imprime( int vec[],int n);
@@ -107,9 +108,7 @@ void Tabla()
 void imprime(int vec[], int n)
 {
     for (int i = 0; i < n; ++i)
-    {
         cout << setw(4) << vec[i];
-    }
 } /*imprime*/
 /*******************************************************************************
 *
@@ -161,20 +160,20 @@ void estadisticas(int vec[], int n)
 {
     double sum = 0, v = 0, p;
     for (int i = 0; i < n; i++)
-    {
         sum += vec[i];
-    }
+        
     p = (double)sum / n;
+    
     for (int i = 0; i < n; i++)
-    {
         v += pow(vec[i], 2.0);
-    }
+        
     v = (double)(v / n) - (pow(p, 2.0));
     cout << "\n\n";
     cout << "Promedio = " << setprecision(1) << fixed << p << '\n';
     cout << "Varianza = " << setprecision(2) << fixed << v << '\n';
     cout << "Desviacion estandar = " << setprecision(2) << fixed << sqrt(v) << '\n';
 } /*estadisticas*/
+
 /*******************************************************************************
 *
 *   void inserta(int vec[],int n,int ne);
@@ -195,16 +194,12 @@ int insertar(int vec[], int n, int y)
     int i, j;
 
     for (i = 0; i < n; i++)
-    {
         if (y <= vec[i])
-        {
             break;
-        }
-    }
-    for (j = n - 1; j >= i; j--)
-    {
+
+    for (j = n - 1 ; j >= i ; j--)
         vec[j + 1] = vec[j];
-    }
+        
     vec[i] = y;
     n++;
     return n;
@@ -229,22 +224,18 @@ int borrar(int vec[], int n, int y)
     int i, j;
 
     for (i = 0; i < n; i++)
-    {
         if (y <= vec[i])
-        {
             break;
-        }
-    }
+            
     if (y == vec[i])
     {
         for (j = i + 1; j < n; ++j)
-        {
             vec[j - 1] = vec[j];
-        }
         n--;
     }
     return n;
 } /*borrar*/
+
 /*******************************************************************************
 *
 *   void vectores();
@@ -328,13 +319,9 @@ void Vectores()
             cout << "\t\nDigite el vector a aplicar estadisticas (1/2): ";
             cin >> x;
             if (x == 1)
-            {
                 estadisticas(vec1, n1);
-            }
             else
-            {
                 estadisticas(vec2, n2);
-            }
             cout << endl
                  << endl;
             system("pause");
