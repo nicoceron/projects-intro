@@ -89,10 +89,9 @@ void Tabla()
          << endl;
     system("pause");
 } /*Tabla*/
-
 /*******************************************************************************
 *
-*   void imprime( int vec[],int n);
+*   void printvec( int vec[],int n);
 *
 *   Purpose: Print the vector 
 *
@@ -105,11 +104,11 @@ void Tabla()
 *              M.Arias
 *			   A.Orjuela
 *******************************************************************************/
-void imprime(int vec[], int n)
+void printvec(int vec[], int n)
 {
     for (int i = 0; i < n; ++i)
         cout << setw(4) << vec[i];
-} /*imprime*/
+} /*printvec*/
 /*******************************************************************************
 *
 *   void ordena( int vec[],int n);
@@ -173,7 +172,6 @@ void estadisticas(int vec[], int n)
     cout << "Varianza = " << setprecision(2) << fixed << v << '\n';
     cout << "Desviacion estandar = " << setprecision(2) << fixed << sqrt(v) << '\n';
 } /*estadisticas*/
-
 /*******************************************************************************
 *
 *   void inserta(int vec[],int n,int ne);
@@ -235,7 +233,6 @@ int borrar(int vec[], int n, int y)
     }
     return n;
 } /*borrar*/
-
 /*******************************************************************************
 *
 *   void vectores();
@@ -280,11 +277,11 @@ void Vectores()
             cout << "\n\n";
             if (x == 1)
             {
-                imprime(vec1, n1);
+                printvec(vec1, n1);
             }
             else if (x == 2)
             {
-                imprime(vec2, n2);
+                printvec(vec2, n2);
             }
             cout << endl
                  << endl;
@@ -297,18 +294,18 @@ void Vectores()
             if (x == 1)
             {
                 cout << "\n\n\tVector original\n\n";
-                imprime(vec1, n1);
+                printvec(vec1, n1);
                 cout << "\n\n\tVector ordenado\n\n";
                 ordena(vec1, n1);
-                imprime(vec1, n1);
+                printvec(vec1, n1);
             }
             else
             {
                 cout << "\n\n\tVector original\n\n";
-                imprime(vec2, n2);
+                printvec(vec2, n2);
                 cout << "\n\n\tVector ordenado\n\n";
                 ordena(vec2, n2);
-                imprime(vec2, n2);
+                printvec(vec2, n2);
             }
             cout << endl
                  << endl;
@@ -333,28 +330,28 @@ void Vectores()
             if (x == 1)
             {
                 cout << "\n\n\tVector original\n\n";
-                imprime(vec1, n1);
+                printvec(vec1, n1);
                 cout << "\n\n\tVector ordenado\n\n";
                 ordena(vec1, n1);
-                imprime(vec1, n1);
+                printvec(vec1, n1);
                 cout << "\n\n\tDigite el elemento a insertar: ";
                 cin >> y;
                 n1 = insertar(vec1, n1, y);
                 cout << "\n\n\tVector nuevo\n\n";
-                imprime(vec1, n1);
+                printvec(vec1, n1);
             }
             else
             {
                 cout << "\n\n\tVector original\n\n";
-                imprime(vec2, n2);
+                printvec(vec2, n2);
                 cout << "\n\n\tVector ordenado\n\n";
                 ordena(vec2, n2);
-                imprime(vec2, n2);
+                printvec(vec2, n2);
                 cout << "\n\n\tDigite el elemento a insertar: ";
                 cin >> y;
                 n2 = insertar(vec2, n2, y);
                 cout << "\n\n\tVector nuevo\n\n";
-                imprime(vec2, n2);
+                printvec(vec2, n2);
             }
             cout << endl
                  << endl;
@@ -367,10 +364,10 @@ void Vectores()
             if (x == 1)
             {
                 cout << "\n\n\tVector original\n\n";
-                imprime(vec1, n1);
+                printvec(vec1, n1);
                 cout << "\n\n\tVector ordenado\n\n";
                 ordena(vec1, n1);
-                imprime(vec1, n1);
+                printvec(vec1, n1);
                 cout << "\n\n\tDigite el elemento a borrar: ";
                 cin >> y;
                 z = borrar(vec1, n1, y);
@@ -378,7 +375,7 @@ void Vectores()
                 {
                     cout << "\n\n\tVector nuevo\n\n";
                     n1 = z;
-                    imprime(vec1, n1);
+                    printvec(vec1, n1);
                 }
                 else
                 {
@@ -388,10 +385,10 @@ void Vectores()
             else
             {
                 cout << "\n\n\tVector original\n\n";
-                imprime(vec2, n2);
+                printvec(vec2, n2);
                 cout << "\n\n\tVector ordenado\n\n";
                 ordena(vec2, n2);
-                imprime(vec2, n2);
+                printvec(vec2, n2);
                 cout << "\n\n\tDigite el elemento a borrar: ";
                 cin >> y;
                 z = borrar(vec2, n2, y);
@@ -399,7 +396,7 @@ void Vectores()
                 {
                     cout << "\n\n\tVector nuevo\n\n";
                     n2 = z;
-                    imprime(vec2, n2);
+                    printvec(vec2, n2);
                 }
                 else
                 {
@@ -426,7 +423,6 @@ void Vectores()
     } while (op != 9);
     system("pause");
 } /*vectores*/
-
 /*******************************************************************************
 *
 *   void Matrices();
