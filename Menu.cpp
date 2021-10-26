@@ -76,11 +76,11 @@ void Tabla()
          << setw(10) << "----------\t"
          << setw(10) << "----------\t"
          << setw(10) << "----------\n";
+    vc = (x * y) / (1 - pow(1 + y, -z));
     for (i = 1; i <= z; i++)
     {
         cout << setw(10) << i << "\t" << setw(10) << si;
         in = si * y;
-        vc = (x * y) / (1 - pow(1 + y, -z));
         ab = vc - in;
         si -= ab;
         cout << "\t" << setw(10) << in << "\t" << setw(10) << vc << "\t" << setw(10) << ab << "\t" << setw(10) << si << "\n";
@@ -89,9 +89,10 @@ void Tabla()
          << endl;
     system("pause");
 } /*Tabla*/
+
 /*******************************************************************************
 *
-*   void printvec( int vec[],int n);
+*   void imprime( int vec[],int n);
 *
 *   Purpose: Print the vector 
 *
@@ -104,13 +105,11 @@ void Tabla()
 *              M.Arias
 *			   A.Orjuela
 *******************************************************************************/
-void printvec(int vec[], int n)
+void imprime(int vec[], int n)
 {
     for (int i = 0; i < n; ++i)
-    {
         cout << setw(4) << vec[i];
-    }
-} /*printvec*/
+} /*imprime*/
 /*******************************************************************************
 *
 *   void ordena( int vec[],int n);
@@ -161,20 +160,20 @@ void estadisticas(int vec[], int n)
 {
     double sum = 0, v = 0, p;
     for (int i = 0; i < n; i++)
-    {
         sum += vec[i];
-    }
+
     p = (double)sum / n;
+
     for (int i = 0; i < n; i++)
-    {
         v += pow(vec[i], 2.0);
-    }
+
     v = (double)(v / n) - (pow(p, 2.0));
     cout << "\n\n";
     cout << "Promedio = " << setprecision(1) << fixed << p << '\n';
     cout << "Varianza = " << setprecision(2) << fixed << v << '\n';
     cout << "Desviacion estandar = " << setprecision(2) << fixed << sqrt(v) << '\n';
 } /*estadisticas*/
+
 /*******************************************************************************
 *
 *   void inserta(int vec[],int n,int ne);
@@ -195,16 +194,12 @@ int insertar(int vec[], int n, int y)
     int i, j;
 
     for (i = 0; i < n; i++)
-    {
         if (y <= vec[i])
-        {
             break;
-        }
-    }
+
     for (j = n - 1; j >= i; j--)
-    {
         vec[j + 1] = vec[j];
-    }
+
     vec[i] = y;
     n++;
     return n;
@@ -229,22 +224,18 @@ int borrar(int vec[], int n, int y)
     int i, j;
 
     for (i = 0; i < n; i++)
-    {
         if (y <= vec[i])
-        {
             break;
-        }
-    }
+
     if (y == vec[i])
     {
         for (j = i + 1; j < n; ++j)
-        {
             vec[j - 1] = vec[j];
-        }
         n--;
     }
     return n;
 } /*borrar*/
+
 /*******************************************************************************
 *
 *   void vectores();
@@ -289,11 +280,11 @@ void Vectores()
             cout << "\n\n";
             if (x == 1)
             {
-                printvec(vec1, n1);
+                imprime(vec1, n1);
             }
             else if (x == 2)
             {
-                printvec(vec2, n2);
+                imprime(vec2, n2);
             }
             cout << endl
                  << endl;
@@ -306,18 +297,18 @@ void Vectores()
             if (x == 1)
             {
                 cout << "\n\n\tVector original\n\n";
-                printvec(vec1, n1);
+                imprime(vec1, n1);
                 cout << "\n\n\tVector ordenado\n\n";
                 ordena(vec1, n1);
-                printvec(vec1, n1);
+                imprime(vec1, n1);
             }
             else
             {
                 cout << "\n\n\tVector original\n\n";
-                printvec(vec2, n2);
+                imprime(vec2, n2);
                 cout << "\n\n\tVector ordenado\n\n";
                 ordena(vec2, n2);
-                printvec(vec2, n2);
+                imprime(vec2, n2);
             }
             cout << endl
                  << endl;
@@ -328,13 +319,9 @@ void Vectores()
             cout << "\t\nDigite el vector a aplicar estadisticas (1/2): ";
             cin >> x;
             if (x == 1)
-            {
                 estadisticas(vec1, n1);
-            }
             else
-            {
                 estadisticas(vec2, n2);
-            }
             cout << endl
                  << endl;
             system("pause");
@@ -346,28 +333,28 @@ void Vectores()
             if (x == 1)
             {
                 cout << "\n\n\tVector original\n\n";
-                printvec(vec1, n1);
+                imprime(vec1, n1);
                 cout << "\n\n\tVector ordenado\n\n";
                 ordena(vec1, n1);
-                printvec(vec1, n1);
+                imprime(vec1, n1);
                 cout << "\n\n\tDigite el elemento a insertar: ";
                 cin >> y;
                 n1 = insertar(vec1, n1, y);
                 cout << "\n\n\tVector nuevo\n\n";
-                printvec(vec1, n1);
+                imprime(vec1, n1);
             }
             else
             {
                 cout << "\n\n\tVector original\n\n";
-                printvec(vec2, n2);
+                imprime(vec2, n2);
                 cout << "\n\n\tVector ordenado\n\n";
                 ordena(vec2, n2);
-                printvec(vec2, n2);
+                imprime(vec2, n2);
                 cout << "\n\n\tDigite el elemento a insertar: ";
                 cin >> y;
                 n2 = insertar(vec2, n2, y);
                 cout << "\n\n\tVector nuevo\n\n";
-                printvec(vec2, n2);
+                imprime(vec2, n2);
             }
             cout << endl
                  << endl;
@@ -380,10 +367,10 @@ void Vectores()
             if (x == 1)
             {
                 cout << "\n\n\tVector original\n\n";
-                printvec(vec1, n1);
+                imprime(vec1, n1);
                 cout << "\n\n\tVector ordenado\n\n";
                 ordena(vec1, n1);
-                printvec(vec1, n1);
+                imprime(vec1, n1);
                 cout << "\n\n\tDigite el elemento a borrar: ";
                 cin >> y;
                 z = borrar(vec1, n1, y);
@@ -391,7 +378,7 @@ void Vectores()
                 {
                     cout << "\n\n\tVector nuevo\n\n";
                     n1 = z;
-                    printvec(vec1, n1);
+                    imprime(vec1, n1);
                 }
                 else
                 {
@@ -401,10 +388,10 @@ void Vectores()
             else
             {
                 cout << "\n\n\tVector original\n\n";
-                printvec(vec2, n2);
+                imprime(vec2, n2);
                 cout << "\n\n\tVector ordenado\n\n";
                 ordena(vec2, n2);
-                printvec(vec2, n2);
+                imprime(vec2, n2);
                 cout << "\n\n\tDigite el elemento a borrar: ";
                 cin >> y;
                 z = borrar(vec2, n2, y);
@@ -412,7 +399,7 @@ void Vectores()
                 {
                     cout << "\n\n\tVector nuevo\n\n";
                     n2 = z;
-                    printvec(vec2, n2);
+                    imprime(vec2, n2);
                 }
                 else
                 {
@@ -440,29 +427,91 @@ void Vectores()
     system("pause");
 } /*vectores*/
 
+/*******************************************************************************
+*
+*   void Matrices();
+*
+*   Purpose: gives menu of the option 3
+*
+*   Return:  Nothing
+*
+*   DATE       RESPONSIBLE    COMMENT
+*   -----------------------------------------------------------------------
+*  Oct 25/21   S.N.Ceron  Initial Implementation
+*              J.C.Ruiz
+*              M.Arias
+*			   A.Orjuela
+*******************************************************************************/
 void Matrices()
 {
     system("cls");
     cout << "\n\t\tOPCION EN CONSTRUCCION" << endl
          << endl;
     system("pause");
-}
+} /*Matrices*/
 
+/*******************************************************************************
+*
+*   void Estructuras();
+*
+*   Purpose: This part of the code is not going to work
+*
+*   Return:  Nothing
+*
+*   DATE       RESPONSIBLE    COMMENT
+*   -----------------------------------------------------------------------
+*  Oct 25/21   S.N.Ceron  Initial Implementation
+*              J.C.Ruiz
+*              M.Arias
+*			   A.Orjuela
+*******************************************************************************/
 void Estructuras()
 {
     system("cls");
     cout << "\n\t\tOPCION EN CONSTRUCCION" << endl
          << endl;
     system("pause");
-}
+} /*Estructuras*/
 
+/*******************************************************************************
+*
+*   void Archivos();
+*
+*   Purpose: This part of the code is not going to work
+*
+*   Return:  Nothing
+*
+*   DATE       RESPONSIBLE    COMMENT
+*   -----------------------------------------------------------------------
+*  Sep 09/21   S.N.Ceron  Initial Implementation
+*              J.C.Ruiz
+*              M.Arias
+*			   A.Orjuela
+*******************************************************************************/
 void Archivos()
 {
     system("cls");
     cout << "\n\t\tOPCION EN CONSTRUCCION" << endl
          << endl;
     system("pause");
-}
+} /*Archivos*/
+
+/*******************************************************************************
+*
+*   main();
+*
+*   Purpose: Is the general function of the code , is in charge of giving the
+*			 list and calling the functions through the code options
+*
+*   Return:  Nothing
+*
+*   DATE       RESPONSIBLE    COMMENT
+*   -----------------------------------------------------------------------
+*  Sep 09/21   S.N.Ceron  Initial Implementation
+*              J.C.Ruiz
+*              M.Arias
+*			   A.Orjuela
+*******************************************************************************/
 
 main()
 {
@@ -510,4 +559,4 @@ main()
             break;
         }
     } while (op != 9);
-}
+} /*main*/
