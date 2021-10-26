@@ -438,11 +438,193 @@ void Vectores()
 *              M.Arias
 *			   A.Orjuela
 *******************************************************************************/
+void printmat(int mat[][10], int m, int n)
+{
+    int i, j;
+
+    for (i = 0; i < m; ++i)
+    {
+        for (j = 0; j < n; ++j)
+        {
+            cout << setw(4) << mat[i][j];
+        }
+        cout << endl;
+    }
+} //imprime matriz
+
+double porcmat(int mat[][10], int m, int n, int x)
+{
+    int c = 0, tot = 0;
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if (mat[i][j] % x == 0 && mat[i][j] != 0)
+            {
+                c++;
+            }
+            tot++;
+        }
+    }
+    return (double)c * 100 / tot;
+} //porcentaje matriz
+
+double modmat(int mat[][10], int m, int n, int x)
+{
+    int c = 0, tot = 0;
+    if (x == 1)
+    {
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if (mat[i][j] % 2 != 0 && mat[i][j] != 0)
+                {
+                    mat[i][j] = -1;
+                    c++;
+                }
+                tot++;
+            }
+        }
+    }
+    else
+    {
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if (mat[i][j] % 2 == 0 && mat[i][j] != 0)
+                {
+                    mat[i][j] = -2;
+                    c++;
+                }
+                tot++;
+            }
+        }
+    }
+    return (double)c * 100 / tot;
+}
+
+void trimat(int mat[][10], int m, int n, char z)
+{
+    int x = min(m, n);
+    if (z == 's')
+    {
+        for (int i = 0; i < x; i++)
+        {
+            for (int j = 0; j < x; j++)
+            {
+                if (j < i)
+                {
+                    mat[i][j] = 0;
+                }
+            }
+        }
+    }
+    else if (z == 'i')
+    {
+        for (int i = 0; i < x; i++)
+        {
+            for (int j = 0; j < x; j++)
+            {
+                if (j > i)
+                {
+                    mat[i][j] = 0;
+                }
+            }
+        }
+    }
+}
 void Matrices()
 {
-    system("cls");
-    cout << "\n\t\tOPCION EN CONSTRUCCION" << endl
-         << endl;
+
+    int mat[10][10] = {
+        {4, 14, 0, 12, 19, 8, 12},
+        {5, 10, 0, 9, 3, 11, 4},
+        {16, 8, 3, 99, 10, 2, 15},
+        {13, 21, 12, 6, 7, 0, 0},
+        {0, 3, 11, 7, 9, 4, 13}};
+    int m = 5, n = 7;
+    int x;
+    char z;
+    int op;
+    do
+    {
+        system("cls");
+        cout << "\n\t\tMENU MATRICES" << endl;
+        cout << "\n\t\t1. Muestra Matriz.";
+        cout << "\n\t\t2. Porcentaje acorde.";
+        cout << "\n\t\t3. Modifica al caso.";
+        cout << "\n\t\t4. Ajusta a Triangular.";
+        cout << "\n\t\t9. Salir";
+        cout << "\n\n\n\tDigite la opcion: ";
+        cin >> op;
+        switch (op)
+        {
+        case 1:
+            system("cls");
+            cout << endl
+                 << endl;
+            printmat(mat, m, n);
+            cout << endl
+                 << endl;
+            system("pause");
+            break;
+        case 2:
+            system("cls");
+            cout << endl
+                 << endl;
+            printmat(mat, m, n);
+            cout << "\nDigite un numero de un digito: ";
+            cin >> x;
+            cout << "\nPorcentaje acorde digito leido= " << fixed << setprecision(1) << porcmat(mat, m, n, x) << "%\n\n";
+            cout << endl
+                 << endl;
+            system("pause");
+            break;
+        case 3:
+            system("cls");
+            cout << "\nDigite 1 si impar 0 si par: ";
+            cin >> x;
+            cout << "\nPorcentaje numeros modificados= " << fixed << setprecision(1) << modmat(mat, m, n, x) << "%\n\n";
+            printmat(mat, m, n);
+            cout << endl
+                 << endl;
+            system("pause");
+            break;
+        case 4:
+            system("cls");
+            z = 'x';
+            cout << endl
+                 << endl;
+            printmat(mat, m, n);
+            while (z != 's' && z != 'i')
+            {
+                cout << "\t\nDigite s:superior/i:inferior -> ";
+                cin >> z;
+            }
+            trimat(mat, m, n, z);
+            cout << endl
+                 << endl;
+            printmat(mat, m, n);
+            cout << endl
+                 << endl;
+            system("pause");
+            break;
+        case 9:
+            system("cls");
+            cout << "\n\t\tHASTA LA VISTA... Baby :-)" << endl
+                 << endl;
+            getch();
+            break;
+        default:
+            system("cls");
+            cout << "\n\t\tOPCION INVALIDA ... Intente de nuevo" << endl
+                 << endl;
+            system("pause");
+            break;
+        }
+    } while (op != 9);
     system("pause");
 } /*Matrices*/
 
