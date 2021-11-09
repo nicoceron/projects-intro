@@ -409,9 +409,6 @@ void Vectores()
             break;
         case 9:
             system("cls");
-            cout << "\n\t\tHASTA LA VISTA... Baby :-)" << endl
-                 << endl;
-            getch();
             break;
         default:
             system("cls");
@@ -609,9 +606,6 @@ void Matrices()
             break;
         case 9:
             system("cls");
-            cout << "\n\t\tHASTA LA VISTA... Baby :-)" << endl
-                 << endl;
-            getch();
             break;
         default:
             system("cls");
@@ -638,11 +632,241 @@ void Matrices()
 *              M.Arias
 *			   A.Orjuela
 *******************************************************************************/
+struct persona
+{
+    string nombre;
+    // nombre del periodista
+    int fecnac;
+    /* fecha de nacimiento en formato AAAAMMDD
+donde AAAA es año con 4 dígitos MM mes con 2
+dígitos y DD el día con 2 dígitos */
+    char sexo;
+    // sexo del estudiante (f ó m)
+    string ciudad;
+    // ciudad donde reside el reportero
+    int nd;
+    // número de deportes que le interesan
+    int codigo[8];
+    // códigos de los deportes que le interesan
+};
+struct sport
+{
+    int codigo;
+    // código del deporte
+    char auxi;
+    // indicativo S o N si el deporte tiene o no auxilio
+    string nombre;
+    // nombre del deporte
+    int numtrans[10];
+    // número de transmisiones en los últimos 10 campeonatos
+};
+void printrep(persona reporter[], int nr)
+{
+    cout << "              L I S T A D O     B A S I C O     R E P O R T E R O S\n\n"
+         << "  nombre     fecnac    sex     ciudad    nd  dep1 dep2 dep3 dep4 dep5 dep6 dep7 dep8" << endl
+         << "----------  --------  -----  ----------  --  ---- ---- ---- ---- ---- ---- ---- ----" << endl;
+    for (int i = 0; i < nr; i++)
+    {
+        cout << setw(10) << reporter[i].nombre << setw(10) << reporter[i].fecnac << setw(5) << reporter[i].sexo << setw(13) << reporter[i].ciudad << setw(5) << reporter[i].nd << " ";
+        for (int j = 0; j < reporter[i].nd; j++)
+        {
+            cout << setw(5) << reporter[i].codigo[j];
+        }
+        cout << endl;
+    }
+}
+void printsport(sport deporte[], int nd)
+{
+    cout << "              LISTADO BASICO DEPORTES\n\n"
+         << "              Transmisiones ultimos 10 campeonatos\n\n"
+         << "  cod  auxi     nombre     T0 T1 T2 T3 T4 T5 T6 T7 T8 T9 " << endl
+         << "  ---  ----  ------------  -- -- -- -- -- -- -- -- -- --" << endl;
+    for (int i = 0; i < nd; i++)
+    {
+        cout << setw(5) << deporte[i].codigo << setw(6) << deporte[i].auxi << setw(13) << deporte[i].nombre << "  ";
+
+        for (int j = 0; j < 10; j++)
+        {
+            cout << setw(3) << deporte[i].numtrans[j];
+        }
+        cout << endl;
+    }
+}
+void printrs(persona reporter[], int nr, sport deporte[], int nd)
+{
+    int x;
+    string d;
+    cout << "        LISTADO REPORTEROS por DEPORTE\n\n"
+         << "Digite nombre deporte: ";
+    cin >> d;
+    cout << "\nReporteros que laboran con ese deporte\n\n";
+    for (int i = 0; i < nd; i++)
+    {
+        if (d == deporte[i].nombre)
+        {
+            x = deporte[i].codigo;
+        }
+    }
+    for (int i = 0; i < nr; i++)
+    {
+        for (int j = 0; j < reporter[i].nd; j++)
+        {
+            if (x == reporter[i].codigo[j])
+            {
+                cout << reporter[i].nombre << '\n';
+            }
+        }
+    }
+}
+void estrep(persona reporter[], int nr, sport deporte[], int nd)
+{
+    double sf = 0, sm = 0, age = 0, saux = 0, naux = 0, promr = 0;
+    for (int i = 0; i < nr; i++)
+    {
+        if (reporter[i].sexo == 'f')
+        {
+            sf++;
+        }
+        else
+        {
+            sm++;
+        }
+        age = 2021 - reporter[i].fecnac / 10000;
+        promr += age;
+    }
+    for (int i = 0; i < nd; i++)
+    {
+        if (deporte[i].auxi == 'S')
+        {
+            saux++;
+        }
+        else
+        {
+            naux++;
+        }
+    }
+    cout << fixed << setprecision(1) << "\tPorcentaje Hombres = " << sm * 100 / nr << '%' << '\n'
+         << "\tPorcentaje Mujeres = " << sf * 100 / nr << '%' << "\n\n"
+         << "Edad promedio reporteros = " << setprecision(2) << promr / nr << " anos"
+         << "\n\n"
+         << fixed << setprecision(1)
+         << "Porcentaje Deportes CON Auxilio = " << saux * 100 / nd << '%' << '\n'
+         << "Porcentaje Deportes SIN Auxilio = " << naux * 100 / nd << '%';
+}
 void Estructuras()
 {
-    system("cls");
-    cout << "\n\t\tOPCION EN CONSTRUCCION" << endl
-         << endl;
+    int nr = 30;
+    persona reporter[100] = {
+        {"esteban", 19631023, 'm', "medellin", 8, {106, 102, 115, 110, 101, 103, 109, 104}},
+        {"fernanda", 19601221, 'f', "medellin", 1, {109}},
+        {"cesar", 19610430, 'm', "armenia", 8, {113, 105, 115, 112, 110, 102, 104, 108}},
+        {"eyner", 19600202, 'm', "bogota", 2, {104, 113}},
+        {"luisa", 19941210, 'f', "medellin", 7, {113, 109, 110, 105, 103, 106, 115}},
+        {"jacob", 19650925, 'm', "armenia", 2, {108, 105}},
+        {"nicolas", 19620520, 'm', "pereira", 1, {109}},
+        {"maria", 19630306, 'f', "cali", 7, {109, 103, 104, 106, 113, 105, 101}},
+        {"yair", 19620909, 'm', "cali", 1, {109}},
+        {"vanesa", 19651001, 'f', "medellin", 4, {108, 107, 101, 105}},
+        {"francisco", 19631025, 'm', "cali", 6, {109, 105, 102, 110, 112, 101}},
+        {"camilo", 19610901, 'm', "armenia", 5, {110, 104, 101, 109, 114}},
+        {"kevin", 19620602, 'm', "cali", 4, {108, 114, 101, 110}},
+        {"valeria", 19630230, 'f', "pereira", 3, {111, 107, 102}},
+        {"sebastian", 19630407, 'm', "cali", 5, {101, 112, 104, 115, 111}},
+        {"sofia", 19610406, 'f', "bogota", 8, {111, 115, 105, 101, 104, 103, 108, 110}},
+        {"santiago", 19601209, 'm', "cali", 2, {106, 114}},
+        {"enrique", 19610927, 'm', "cali", 1, {107}},
+        {"jose", 19620530, 'm', "armenia", 8, {105, 115, 103, 101, 110, 104, 114, 106}},
+        {"david", 19610922, 'm', "medellin", 5, {106, 115, 102, 101, 110}},
+        {"ana", 19611229, 'f', "armenia", 5, {110, 113, 104, 111, 103}},
+        {"joshua", 19600901, 'm', "armenia", 4, {113, 109, 106, 112}},
+        {"felipe", 19600614, 'm', "bogota", 5, {113, 112, 108, 104, 114}},
+        {"janna", 19601003, 'f', "medellin", 2, {104, 102}},
+        {"alejandra", 19640329, 'f', "cali", 5, {108, 101, 103, 105, 113}},
+        {"daniela", 19611005, 'f', "bogota", 7, {102, 112, 105, 104, 107, 106, 115}},
+        {"andres", 19630821, 'm', "cali", 1, {114}},
+        {"juana", 19630817, 'f', "pereira", 6, {104, 103, 107, 115, 114, 102}},
+        {"zaida", 19651209, 'f', "bogota", 7, {113, 102, 112, 103, 101, 107, 114}},
+        {"jeisson", 19630905, 'm', "medellin", 8, {113, 108, 101, 115, 104, 111, 114, 102}},
+    };
+    int nd = 15;
+    sport deporte[100] = {
+        {101, 'S', "futbol", {18, 20, 1, 18, 15, 10, 10, 12, 8, 13}},
+        {102, 'N', "beisbol", {6, 18, 17, 5, 19, 1, 20, 17, 12, 4}},
+        {103, 'S', "tenis", {11, 6, 15, 7, 2, 18, 2, 4, 17, 7}},
+        {104, 'S', "natacion", {10, 18, 14, 13, 1, 17, 6, 7, 11, 15}},
+        {105, 'N', "gimnasia", {14, 9, 2, 7, 8, 6, 4, 6, 6, 15}},
+        {106, 'S', "salto", {7, 2, 1, 16, 2, 6, 18, 15, 12, 16}},
+        {107, 'S', "bmx", {8, 13, 2, 9, 3, 18, 17, 1, 18, 7}},
+        {108, 'N', "pista", {4, 5, 1, 19, 2, 10, 15, 19, 16, 3}},
+        {109, 'S', "ruta", {12, 19, 14, 12, 11, 4, 18, 7, 14, 19}},
+        {110, 'S', "voleybol", {10, 4, 17, 5, 4, 3, 9, 17, 14, 10}},
+        {111, 'N', "basketbol", {2, 19, 19, 1, 19, 5, 8, 3, 12, 12}},
+        {112, 'S', "karate", {2, 6, 19, 7, 12, 11, 15, 3, 8, 10}},
+        {113, 'S', "arco", {4, 9, 15, 12, 15, 6, 11, 14, 12, 7}},
+        {114, 'S', "clavado", {10, 3, 5, 9, 5, 10, 4, 18, 7, 19}},
+        {115, 'N', "pingpong", {18, 6, 14, 1, 6, 5, 9, 7, 12, 16}},
+    };
+    int op;
+    do
+    {
+        system("cls");
+        cout << "\n\t\tREPORTEROS DEPORTIVOS" << endl;
+        cout << "\n\t\t1. Listado Basico Reporteros";
+        cout << "\n\t\t2. Listado Basico Deportes";
+        cout << "\n\t\t3. Lista reporters by sport";
+        cout << "\n\t\t4. Estadisticas";
+        cout << "\n\t\t9. Salir";
+        cout << "\n\n\n\tDigite la opcion: ";
+        cin >> op;
+        switch (op)
+        {
+        case 1:
+            system("cls");
+            cout << endl
+                 << endl;
+            printrep(reporter, nr);
+            cout << endl
+                 << endl;
+            system("pause");
+            break;
+        case 2:
+            system("cls");
+            cout << endl
+                 << endl;
+            printsport(deporte, nd);
+            cout << endl
+                 << endl;
+            system("pause");
+            break;
+        case 3:
+            system("cls");
+            cout << endl
+                 << endl;
+            printrs(reporter, nr, deporte, nd);
+            cout << endl
+                 << endl;
+            system("pause");
+            break;
+        case 4:
+            system("cls");
+            cout << endl
+                 << endl;
+            estrep(reporter, nr, deporte, nd);
+            cout << endl
+                 << endl;
+            system("pause");
+            break;
+        case 9:
+            system("cls");
+            break;
+        default:
+            system("cls");
+            cout << "\n\t\tOPCION INVALIDA ... Intente de nuevo" << endl
+                 << endl;
+            system("pause");
+            break;
+        }
+    } while (op != 9);
     system("pause");
 } /*Estructuras*/
 
