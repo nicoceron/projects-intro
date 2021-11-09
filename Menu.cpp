@@ -4,10 +4,6 @@
 /*   ++  ++ +++----+                                                          */
 /*    |  |   |++  ++      DEVELOPED BY: Ing. Jeisson Ruiz 				      */
 /*    |  |   | |  |                     jeisson_ruizc@javeriana.edu.co        */
-/*    |  |   | |  |                     Ing. Andres Orjuela       		      */
-/*    |  |   | |  |                     orjuela_af@javeriana.edu.co			  */
-/*    |  |   | |  |                     Ing. Mariana Pinzon	                  */
-/*    |  |   | |  |                     mariana-pinzon@javeriana.edu.co       */
 /*    |  |   | |  |                     Ing. Nicolas Ceron                    */
 /*    |  |   | |  |                     ceron_s@javeriana.edu.co              */
 /*    |  |   | |  |                                                           */
@@ -22,8 +18,6 @@
 /******************************************************************************/
 /*                                                                            */
 /*      Origin:  Written and tested by Jeisson Ruiz 				          */
-/*      							   Andres  Orjuela 				          */
-/*       							   Mariana Pinzon 				          */
 /*                                     Nicolas Ceron                          */
 /*                                                                            */
 /******************************************************************************/
@@ -45,8 +39,6 @@ using namespace std;
 *   -----------------------------------------------------------------------
 *  Sep 09/21   S.N.Ceron  Initial Implementation
 *              J.C.Ruiz
-*              M.Arias
-*			   A.Orjuela
 *******************************************************************************/
 void Tabla()
 {
@@ -101,8 +93,6 @@ void Tabla()
 *   -----------------------------------------------------------------------
 *  Sep 09/21   S.N.Ceron  Initial Implementation
 *              J.C.Ruiz
-*              M.Arias
-*			   A.Orjuela
 *******************************************************************************/
 void printvec(int vec[], int n)
 {
@@ -121,8 +111,6 @@ void printvec(int vec[], int n)
 *   -----------------------------------------------------------------------
 *  Sep 09/21   S.N.Ceron  Initial Implementation
 *              J.C.Ruiz
-*              M.Arias
-*			   A.Orjuela
 *******************************************************************************/
 void ordena(int vec[], int n)
 {
@@ -152,8 +140,6 @@ void ordena(int vec[], int n)
 *   -----------------------------------------------------------------------
 *  Sep 09/21   S.N.Ceron  Initial Implementation
 *              J.C.Ruiz
-*              M.Arias
-*			   A.Orjuela
 *******************************************************************************/
 void estadisticas(int vec[], int n)
 {
@@ -184,8 +170,6 @@ void estadisticas(int vec[], int n)
 *   -----------------------------------------------------------------------
 *  Sep 09/21   S.N.Ceron  Initial Implementation
 *              J.C.Ruiz
-*              M.Arias
-*			   A.Orjuela
 *******************************************************************************/
 int insertar(int vec[], int n, int y)
 {
@@ -214,8 +198,6 @@ int insertar(int vec[], int n, int y)
 *   -----------------------------------------------------------------------
 *  Sep 09/21   S.N.Ceron  Initial Implementation
 *              J.C.Ruiz
-*              M.Arias
-*			   A.Orjuela
 *******************************************************************************/
 int borrar(int vec[], int n, int y)
 {
@@ -245,8 +227,6 @@ int borrar(int vec[], int n, int y)
 *   -----------------------------------------------------------------------
 *  Sep 09/21   S.N.Ceron  Initial Implementation
 *              J.C.Ruiz
-*              M.Arias
-*			   A.Orjuela
 *******************************************************************************/
 void Vectores()
 {
@@ -432,8 +412,6 @@ void Vectores()
 *   -----------------------------------------------------------------------
 *  Oct 25/21   S.N.Ceron  Initial Implementation
 *              J.C.Ruiz
-*              M.Arias
-*			   A.Orjuela
 *******************************************************************************/
 void printmat(int mat[][10], int m, int n)
 {
@@ -629,8 +607,6 @@ void Matrices()
 *   -----------------------------------------------------------------------
 *  Oct 25/21   S.N.Ceron  Initial Implementation
 *              J.C.Ruiz
-*              M.Arias
-*			   A.Orjuela
 *******************************************************************************/
 struct persona
 {
@@ -882,8 +858,6 @@ void Estructuras()
 *   -----------------------------------------------------------------------
 *  Sep 09/21   S.N.Ceron  Initial Implementation
 *              J.C.Ruiz
-*              M.Arias
-*			   A.Orjuela
 *******************************************************************************/
 void Archivos()
 {
@@ -906,8 +880,6 @@ void Archivos()
 *   -----------------------------------------------------------------------
 *  Sep 09/21   S.N.Ceron  Initial Implementation
 *              J.C.Ruiz
-*              M.Arias
-*			   A.Orjuela
 *******************************************************************************/
 
 main()
