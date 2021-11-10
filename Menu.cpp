@@ -433,7 +433,7 @@ double porcmat(int mat[][10], int m, int n, int x)
     {
         for (int j = 0; j < n; j++)
         {
-            if (mat[i][j] % x == 0 && mat[i][j] != 0)
+            if ((mat[i][j] % x == 0 || mat[i][j] % 10 == x) && mat[i][j] != 0)
             {
                 c++;
             }
